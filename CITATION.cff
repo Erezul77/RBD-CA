@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+title: RBD-CA Observer Ontology Experiments
+message: If you use this project, please cite it using the information below.
+authors:
+  - family-names: "Project Contributors"
+    given-names: ""
+license: MIT
+version: "1.0.0"
+

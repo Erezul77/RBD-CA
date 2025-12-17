@@ -1,0 +1,350 @@
+CURSOR ONE-BLOCK SETUP (Windows) — create files + run demo
+
+1) Create these files exactly:
+
+A) bda.py
+----------------------------------------
+import argparse
+import csv
+import os
+import time
+from dataclasses import dataclass
+from collections import deque
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+try:
+    import imageio.v2 as imageio
+except Exception:
+    imageio = None
+
+
+# Moore neighborhood (8-connected)
+N8 = [(-1, -1), (-1, 0), (-1, 1),
+      (0, -1),           (0, 1),
+      (1, -1),  (1, 0),  (1, 1)]
+
+
+@dataclass
+class Params:
+    H: int = 80
+    W: int = 120
+    steps: int = 300
+    seed: int = 0
+    init_density: float = 0.15
+
+    # V1 distance-dependent thresholds:
+    # a(d) = floor(a0 + a1*d), b(d) = floor(b0 + b1*d), clipped to [0,8]
+    a0: float = 2.0
+    a1: float = 2.0
+    b0: float = 3.0
+    b1: float = 3.0
+
+    # output
+    frame_every: int = 2
+    save_png: bool = True
+    save_gif: bool = True
+    dpi: int = 140
+
+    # metrics
+    detect_cycles: bool = True
+    cycle_window: int = 200  # how many past hashes to keep
+
+
+def ensure_dir(path: str) -> None:
+    os.makedirs(path, exist_ok=True)
+
+
+def neighbor_sum(grid: np.ndarray) -> np.ndarray:
+    """Sum of 8 neighbors with fixed-zero boundary conditions."""
+    H, W = grid.shape
+    p = np.pad(grid, 1, mode="constant", constant_values=0)
+    s = np.zeros((H, W), dtype=np.int32)
+    for dy, dx in N8:
+        s += p[1 + dy: 1 + dy + H, 1 + dx: 1 + dx + W]
+    return s
+
+
+def boundary_mask(grid: np.ndarray) -> np.ndarray:
+    """
+    Boundary = active cell with at least one inactive neighbor (Moore),
+    with fixed-zero outside grid.
+    """
+    H, W = grid.shape
+    p = np.pad(grid, 1, mode="constant", constant_values=0)
+    active = (grid == 1)
+    is_b = np.zeros((H, W), dtype=bool)
+    for dy, dx in N8:
+        neigh = p[1 + dy: 1 + dy + H, 1 + dx: 1 + dx + W]
+        is_b |= (active & (neigh == 0))
+    return is_b
+
+
+def distance_to_boundary(boundary: np.ndarray) -> np.ndarray:
+    """
+    Multi-source BFS distance on 8-neighborhood.
+    Returns int distances; if no boundary exists, returns large values (INF).
+    """
+    H, W = boundary.shape
+    INF = 10**9
+    dist = np.full((H, W), INF, dtype=np.int32)
+
+    q = deque()
+    ys, xs = np.where(boundary)
+    for y, x in zip(ys, xs):
+        dist[y, x] = 0
+        q.append((y, x))
+
+    if not q:
+        return dist
+
+    while q:
+        y, x = q.popleft()
+        d = dist[y, x]
+        nd = d + 1
+        for dy, dx in N8:
+            ny, nx = y + dy, x + dx
+            if 0 <= ny < H and 0 <= nx < W and dist[ny, nx] > nd:
+                dist[ny, nx] = nd
+                q.append((ny, nx))
+
+    return dist
+
+
+def normalize_distance(dist: np.ndarray) -> np.ndarray:
+    """Normalize finite distances to [0,1]. If no finite distances exist -> return ones."""
+    INF = 10**9
+    finite = (dist < INF)
+    if not np.any(finite):
+        return np.ones(dist.shape, dtype=np.float32)
+
+    dmax = int(dist[finite].max())
+    dmax = max(dmax, 1)
+    return (dist.astype(np.float32) / float(dmax)).astype(np.float32)
+
+
+def thresholds_from_distance(dnorm: np.ndarray, a0: float, a1: float, b0: float, b1: float):
+    """
+    Compute a(d), b(d) arrays:
+      a = clip(floor(a0 + a1*d), 0, 8)
+      b = clip(floor(b0 + b1*d), 0, 8)
+    """
+    a = np.floor(a0 + a1 * dnorm).astype(np.int32)
+    b = np.floor(b0 + b1 * dnorm).astype(np.int32)
+    a = np.clip(a, 0, 8)
+    b = np.clip(b, 0, 8)
+    return a, b
+
+
+def step_v1(grid: np.ndarray, *, a0: float, a1: float, b0: float, b1: float):
+    """
+    V1 update:
+      s = sum of Moore neighbors in {0..8}
+      dnorm in [0,1] = normalized distance to boundary B_t
+      state_{t+1}(c) = 1 iff a(dnorm) <= s <= b(dnorm)
+    """
+    s = neighbor_sum(grid)
+    bmask = boundary_mask(grid)
+    dist = distance_to_boundary(bmask)
+    dnorm = normalize_distance(dist)
+    a, b = thresholds_from_distance(dnorm, a0, a1, b0, b1)
+
+    new_grid = ((s >= a) & (s <= b)).astype(np.uint8)
+
+    metrics = {
+        "active": int(new_grid.sum()),
+        "boundary": int(boundary_mask(new_grid).sum()),
+        "dmax": float(dnorm.max()),
+    }
+    return new_grid, metrics
+
+
+def save_frame_png(grid: np.ndarray, outpath: str, title: str, dpi: int = 140) -> None:
+    plt.figure()
+    plt.imshow(grid, interpolation="nearest")
+    plt.title(title)
+    plt.axis("off")
+    plt.tight_layout()
+    plt.savefig(outpath, dpi=dpi)
+    plt.close()
+
+
+def grid_hash(grid: np.ndarray) -> int:
+    return hash(grid.tobytes())
+
+
+def run(params: Params, out_dir: str, run_name: str = "run") -> None:
+    ensure_dir(out_dir)
+
+    rng = np.random.default_rng(params.seed)
+    grid = (rng.random((params.H, params.W)) < params.init_density).astype(np.uint8)
+
+    frames = []
+    metrics_rows = []
+
+    seen = {}
+    cycle_found = None
+
+    for t in range(params.steps + 1):
+        if t % params.frame_every == 0:
+            if params.save_png:
+                png_path = os.path.join(out_dir, f"frame_{t:04d}.png")
+                title = (
+                    f"DBC-CA V1 | t={t} | "
+                    f"a0={params.a0},a1={params.a1}, b0={params.b0},b1={params.b1} | "
+                    f"density0={params.init_density}"
+                )
+                save_frame_png(grid, png_path, title, dpi=params.dpi)
+
+            if params.save_gif and imageio is not None:
+                frames.append((grid * 255).astype(np.uint8))
+
+        if t == 0:
+            metrics_rows.append({
+                "t": t,
+                "active": int(grid.sum()),
+                "boundary": int(boundary_mask(grid).sum()),
+                "dmax": 0.0
+            })
+
+        if params.detect_cycles and cycle_found is None:
+            h = grid_hash(grid)
+            if h in seen:
+                period = t - seen[h]
+                cycle_found = {"first_seen_t": seen[h], "t": t, "period": period}
+            else:
+                seen[h] = t
+                if len(seen) > params.cycle_window:
+                    oldest_key = min(seen, key=seen.get)
+                    del seen[oldest_key]
+
+        if t == params.steps:
+            break
+
+        grid, m = step_v1(grid, a0=params.a0, a1=params.a1, b0=params.b0, b1=params.b1)
+        m["t"] = t + 1
+        metrics_rows.append(m)
+
+    csv_path = os.path.join(out_dir, "metrics.csv")
+    with open(csv_path, "w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=["t", "active", "boundary", "dmax"])
+        writer.writeheader()
+        writer.writerows(metrics_rows)
+
+    if params.save_gif and imageio is not None and len(frames) > 0:
+        gif_path = os.path.join(out_dir, f"{run_name}.gif")
+        imageio.mimsave(gif_path, frames, duration=0.08)
+
+    final = metrics_rows[-1]
+    print("=== DBC-CA V1 RUN SUMMARY ===")
+    print(f"Output dir: {out_dir}")
+    print(f"Grid: {params.H}x{params.W} | steps: {params.steps} | seed: {params.seed}")
+    print(f"Init density: {params.init_density}")
+    print(f"Thresholds: a(d)=floor({params.a0}+{params.a1}*d), b(d)=floor({params.b0}+{params.b1}*d)")
+    print(f"Final active: {final['active']} | final boundary: {final['boundary']}")
+    if cycle_found is not None:
+        print(f"Cycle detected (hash-based): first_seen_t={cycle_found['first_seen_t']} "
+              f"t={cycle_found['t']} period≈{cycle_found['period']}")
+    else:
+        print("No cycle detected (within hash window).")
+
+
+def parse_args():
+    p = argparse.ArgumentParser(description="Distance-to-Boundary Coupled CA (V1) reference implementation.")
+    p.add_argument("--demo", action="store_true", help="Run a demo with defaults and save outputs.")
+    p.add_argument("--H", type=int, default=80)
+    p.add_argument("--W", type=int, default=120)
+    p.add_argument("--steps", type=int, default=300)
+    p.add_argument("--seed", type=int, default=0)
+    p.add_argument("--init-density", type=float, default=0.15)
+
+    p.add_argument("--a0", type=float, default=2.0)
+    p.add_argument("--a1", type=float, default=2.0)
+    p.add_argument("--b0", type=float, default=3.0)
+    p.add_argument("--b1", type=float, default=3.0)
+
+    p.add_argument("--frame-every", type=int, default=2)
+    p.add_argument("--no-png", action="store_true", help="Disable PNG output.")
+    p.add_argument("--no-gif", action="store_true", help="Disable GIF output.")
+    p.add_argument("--dpi", type=int, default=140)
+
+    p.add_argument("--out", type=str, default="", help="Output directory (default: outputs/<timestamp>/)")
+    p.add_argument("--run-name", type=str, default="run", help="Base name for gif.")
+    p.add_argument("--no-cycle-detect", action="store_true", help="Disable simple cycle detection.")
+    return p.parse_args()
+
+
+def main():
+    args = parse_args()
+
+    params = Params(
+        H=args.H, W=args.W, steps=args.steps, seed=args.seed, init_density=args.init_density,
+        a0=args.a0, a1=args.a1, b0=args.b0, b1=args.b1,
+        frame_every=max(1, args.frame_every),
+        save_png=not args.no_png,
+        save_gif=not args.no_gif,
+        dpi=args.dpi,
+        detect_cycles=not args.no_cycle_detect,
+    )
+
+    ts = time.strftime("%Y%m%d_%H%M%S")
+    out_dir = args.out.strip() or os.path.join("outputs", f"dbc_ca_v1_{ts}")
+    ensure_dir(out_dir)
+
+    run(params, out_dir=out_dir, run_name=args.run_name)
+
+
+if __name__ == "__main__":
+    main()
+----------------------------------------
+
+B) requirements.txt
+----------------------------------------
+numpy
+matplotlib
+imageio
+----------------------------------------
+
+C) .vscode/launch.json
+----------------------------------------
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run DBC-CA V1 Demo",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/bda.py",
+      "args": ["--demo"],
+      "console": "integratedTerminal"
+    }
+  ]
+}
+----------------------------------------
+
+D) .gitignore (optional but recommended)
+----------------------------------------
+.venv/
+outputs/
+__pycache__/
+*.pyc
+----------------------------------------
+
+
+2) Then open Cursor’s integrated terminal and run exactly:
+
+cd <YOUR_FOLDER>
+python -m venv .venv
+.venv\Scripts\activate
+pip install -r requirements.txt
+python bda.py --demo
+
+If “python” is not recognized, replace it everywhere with:
+py
+
+3) Expected result:
+- outputs/dbc_ca_v1_<timestamp>/frame_*.png
+- outputs/dbc_ca_v1_<timestamp>/run.gif
+- outputs/dbc_ca_v1_<timestamp>/metrics.csv
+- terminal prints a “DBC-CA V1 RUN SUMMARY”

@@ -1,0 +1,22 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run DBC-CA V1 Demo",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/bda.py",
+      "args": ["--demo"],
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Run O-DBC V1 (observer on)",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/bda.py",
+      "args": ["--demo", "--observer-on"],
+      "console": "integratedTerminal"
+    }
+  ]
+}
+
