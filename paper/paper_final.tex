@@ -1,0 +1,253 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+
+% --- Robust pdfTeX stack (MiKTeX / pdflatex) ---
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+
+\usepackage{amsmath,amssymb,amsfonts,mathtools}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{enumitem}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{xcolor}
+
+% --- Float control (prevents figures/tables drifting into References) ---
+\usepackage{float}
+\usepackage{placeins}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  citecolor=blue,
+  urlcolor=blue
+}
+
+\title{\textbf{Recursive Boundary Dynamics in Cellular Systems:}\\
+A Boundary-Driven Cellular Automaton with Observer-Relative Identity Continuity}
+
+\author{Erez Ashkenazi\thanks{Yesud Ha'Ma'ala, Upper Galilee 1210500, Israel. Email: \texttt{erez@noesis-net.org}. ORCID: 0009-0001-5461-0459. Website: \texttt{www.noesis-net.org}.}}
+
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We present a boundary-driven discrete dynamical system in which local update rules are conditioned by a distance-from-boundary field, and a finite observer subsystem is embedded within the dynamics. Unlike classical cellular automata where boundaries are emergent byproducts, boundaries here act as operational operators that modulate local birth and survival thresholds. We evaluate observer configurations ranging from object-view tracking to subject-view tracking with persistence bias and budgeted local intervention. Identity is treated operationally and observer-relative, defined as the continuity of a tracked core over time rather than as an intrinsic physical invariant.
+
+Across sweeps over boundary conditions (zero and toroidal wrap) and observer modes aggregated over random seeds, persistence bias substantially improves continuity of tracking without altering system dynamics, while constrained memory-guided intervention further increases identity continuity under perturbation. Crucially, a matched-budget random intervention control (same action rate, random targets) yields near-zero identity continuity, demonstrating that the observed advantage is not a generic effect of intervention but depends on informational coupling to prior structure. The ordering of effects is preserved under closed-world (wrap) conditions, indicating a relational mechanism rather than an external-boundary artifact.
+\end{abstract}
+
+\noindent\textbf{Keywords:} cellular automata; boundary-driven dynamics; distance transform; observer-relative identity; persistence bias; intervention budget; complex systems; pattern formation
+
+\section{Introduction}
+Cellular automata (CA) are canonical models of emergence in discrete dynamical systems, where global structure can arise from simple local rules \cite{conway1970,wolfram2002,ilachinski2001}. In many classic formulations, boundaries are descriptive contours of activity---outputs of the dynamics rather than causal elements. Here we invert that perspective: boundaries are operational operators that shape local update thresholds via a distance-to-boundary coupling.
+
+We embed a finite observer subsystem (bounded window, limited memory, optional budgeted action) and ask a restricted, operational question: how do memory and constrained intervention affect \emph{observer-relative identity continuity}—the ability to re-identify a structure across time, especially under perturbation? We do not claim an intrinsic physical invariant; rather, we quantify continuity of a tracked core under explicit observer constraints.
+
+\section{Model}
+\subsection{Grid and boundary-driven dynamics}
+We simulate a binary system on an $H\times W$ grid with Moore neighborhood and synchronous updates. Unless stated otherwise, $H=80$, $W=120$, and $T=300$ steps per run.
+
+\paragraph{Operational boundary (skin).}
+At each step, the boundary (``skin'') is defined as the set of active cells adjacent to at least one inactive neighbor. We evaluate two boundary conditions:
+(i) \emph{zero} mode (inactive background treated as a medium) and
+(ii) \emph{wrap} mode (toroidal world), a closed-world control that removes privileged map edges.
+
+\paragraph{Distance-to-boundary coupling.}
+At each step we compute a distance-to-boundary field $D_t(\mathbf{x})$ (distance transform) and normalize it to obtain a boundary-pressure signal $d(\mathbf{x})$ \cite{borgefors1986,felzenszwalb2012}. Local birth/survival thresholds are modulated as functions of $d(\mathbf{x})$, implementing a boundary-conditioned ``pressure'' from skin to interior. This distance field is a global computation and therefore departs from strict CA locality by design; the model explicitly trades strict locality for explicit boundary causality.
+
+\section{Observer subsystem}
+\subsection{Attention window}
+The observer operates on a finite attention window defined by a Chebyshev-radius mask centered at $(a_y,a_x)$ with default radius $r=18$. The attention center drifts toward the tracked core at bounded speed.
+
+\subsection{Observer modes}
+We evaluate five modes:
+\begin{itemize}[leftmargin=2em]
+\item \textbf{object\_off\_tracked:} no local window and no influence; optional global tracking for measurement only.
+\item \textbf{passive\_nopersist:} window + core selection, without persistence bias; no rule modulation.
+\item \textbf{passive\_persist:} window + persistence bias; no rule modulation.
+\item \textbf{active\_persist:} persistence bias plus budgeted local overrides inside the window (observer budget).
+\item \textbf{active\_random:} matched-budget local overrides inside the window, but targets selected uniformly at random; no persistence bias and no dependence on prior structure for action selection.
+\end{itemize}
+
+\subsection{Budgeted local intervention}
+In active modes the observer may override updates inside its window up to a per-step budget
+$B=\lfloor \beta\cdot|\mathrm{window}|\rfloor$, with $\beta=0.05$. We record
+$\mathrm{observer\_action\_rate}=\mathrm{observer\_action\_cells}/|\mathrm{window}|$.
+
+\subsection{Random intervention control (active\_random)}
+To distinguish memory-guided intervention from generic intervention effects, we introduce \textbf{active\_random}. This mode uses the same attention window and the same per-step intervention budget as \textbf{active\_persist} (matched mean action rate), but selects override targets uniformly at random within the window and applies no persistence bias, no core/halo guidance, and no dependence on prior structure during action selection. This isolates whether improvements arise from intervention per se or from \emph{structured, memory-coupled intervention}.
+
+\section{Identity as an operational, observer-relative quantity}
+\subsection{Core selection and persistence bias}
+At each step we compute connected components of active cells and select a core within the observer window. With persistence bias enabled, selection prefers the component with maximal contact to a \emph{memory halo} of the previous core.
+
+\paragraph{Memory halo.}
+The halo is produced by an 8-neighborhood dilation of the previous core mask by $s=2$ steps. A candidate component is scored by its halo-contact hit rate under connected-component traversal, requiring at least 8 halo hits (\texttt{subject\_persist\_min\_hits}=8) to count as ``the same thing.''
+
+\subsection{Identity score and breaks}
+We use \texttt{identity\_score} as the primary identity continuity metric:
+(i) in persistence modes it is the halo-contact hit rate (\texttt{persist\_iou}, a halo hit-rate measure despite its name), and
+(ii) otherwise it falls back to \texttt{core\_jaccard\_prev} (Jaccard overlap of current vs.\ previous core) \cite{jaccard1901}.
+An \texttt{identity\_break} occurs when \texttt{core\_jaccard\_prev} falls below $\theta=0.05$; \texttt{identity\_run\_len} counts steps since the last break.
+
+\section{Perturbation protocol and recovery}
+To test resilience, we inject a one-time localized perturbation (``shock'') at $t=150$: a stochastic flip applied within radius 10 around the attention center, with flip rate 0.03. Recovery is reported as a signed change in core size averaged over steps 150--250 relative to a pre-shock baseline; negative values indicate net post-shock degradation rather than failure to recover.
+
+\section{Sweep design}
+We ran sweeps across boundary modes \{zero, wrap\} and observer modes
+\{object\_off\_tracked, passive\_nopersist, passive\_persist, active\_persist, active\_random\}
+for $T=300$ steps per run, aggregated over $n=15$ random seeds (0--14). For each condition we report mean $\pm$ SD across seeds for:
+(i) mean identity score, (ii) final identity score, (iii) mean recovery, and (iv) mean action rate.
+
+\section{Results}
+\subsection{Identity and intervention by mode}
+Figure~\ref{fig:identity_by_mode} shows that persistence bias improves identity continuity: \texttt{passive\_persist} and \texttt{active\_persist} yield high identity scores, while \texttt{passive\_nopersist} collapses to near-zero identity in both boundary modes. Only active modes exhibit non-zero intervention (Figure~\ref{fig:action_rate_by_mode}).
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\linewidth]{figures/fig_identity_by_mode.png}
+\caption{Mean identity score by boundary mode and observer mode (seeds 0--14).}
+\label{fig:identity_by_mode}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\linewidth]{figures/fig_action_rate_by_mode.png}
+\caption{Mean observer action rate by mode (seeds 0--14). Active modes match the budget (approximately $0.05$ of window cells per step).}
+\label{fig:action_rate_by_mode}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\linewidth]{figures/fig_recovery_by_mode.png}
+\caption{Mean recovery by mode (seeds 0--14) under the shock protocol (signed change; see Methods).}
+\label{fig:recovery_by_mode}
+\end{figure}
+
+\FloatBarrier
+
+\subsection{Memory-guided intervention vs.\ random intervention (matched budget)}
+Adding the \texttt{active\_random} control resolves the core tautology concern. In both boundary modes, \texttt{active\_persist} achieves high identity continuity (mean identity score $\approx 0.70$), while \texttt{active\_random} yields near-zero identity continuity (mean identity score $\approx 0.00$), despite matched action budgets (mean action rate $\approx 0.05$ in both). Therefore, the improvement cannot be attributed to ``more intervention,'' but to informational coupling: memory-guided selection and action stabilize observer-relative identity continuity, whereas random overrides do not. The overall ordering is preserved across boundary conditions:
+\[
+\texttt{active\_persist} > \texttt{passive\_persist} > \texttt{object\_off\_tracked} \gg \texttt{passive\_nopersist} \approx \texttt{active\_random}.
+\]
+
+\subsection{Quantitative table (mean $\pm$ SD)}
+\begin{table}[H]
+\centering
+\caption{Aggregated sweep results across $n=15$ seeds (0--14), including the matched-budget random intervention control (\texttt{active\_random}). Values reported as mean $\pm$ SD.}
+\label{tab:sweep_by_mode}
+
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.15}
+
+\begin{tabular}{p{1.2cm} p{3.2cm} p{2.2cm} p{2.2cm} p{2.2cm} p{2.2cm}}
+\toprule
+Boundary & Observer & Mean identity & Final identity & Mean action rate & Mean recovery \\
+\midrule
+zero & object\_off\_tracked & 0.646 $\pm$ 0.007 & 0.485 $\pm$ 0.351 & 0.000 $\pm$ 0.000 & 515.569 $\pm$ 1259.496 \\
+zero & passive\_nopersist   & 0.000318 $\pm$ 0.000371 & 0.000 $\pm$ 0.000 & 0.000 $\pm$ 0.000 & 6.105 $\pm$ 6.603 \\
+zero & passive\_persist     & 0.690 $\pm$ 0.009 & 0.801 $\pm$ 0.279 & 0.000 $\pm$ 0.000 & 42.495 $\pm$ 130.314 \\
+zero & active\_persist      & 0.703 $\pm$ 0.011 & 0.762 $\pm$ 0.240 & 0.050 $\pm$ 0.000 & -75.061 $\pm$ 132.257 \\
+zero & active\_random       & 0.000319 $\pm$ 0.000328 & 0.00109 $\pm$ 0.00409 & 0.050 $\pm$ 0.000 & 10.138 $\pm$ 5.371 \\
+\midrule
+wrap & object\_off\_tracked & 0.611 $\pm$ 0.009 & 0.553 $\pm$ 0.250 & 0.000 $\pm$ 0.000 & -377.438 $\pm$ 1274.465 \\
+wrap & passive\_nopersist   & 0.000267 $\pm$ 0.000332 & 0.000 $\pm$ 0.000 & 0.000 $\pm$ 0.000 & -7.773 $\pm$ 69.930 \\
+wrap & passive\_persist     & 0.677 $\pm$ 0.013 & 0.542 $\pm$ 0.210 & 0.000 $\pm$ 0.000 & 12.937 $\pm$ 189.387 \\
+wrap & active\_persist      & 0.692 $\pm$ 0.014 & 0.766 $\pm$ 0.189 & 0.050 $\pm$ 0.000 & 60.682 $\pm$ 166.878 \\
+wrap & active\_random       & 0.000488 $\pm$ 0.000383 & 0.000302 $\pm$ 0.001129 & 0.050 $\pm$ 0.000 & 6.563 $\pm$ 18.420 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\FloatBarrier
+
+\subsection{Wrap vs.\ zero: closed-world control}
+The ordering of observer modes is preserved under wrap vs.\ zero boundary conditions. This indicates the identity continuity advantage is not an artifact of an ``outside vacuum'' or map-edge geometry, but emerges from relational boundary dynamics and observer constraints within a closed world.
+
+\section{Discussion}
+The results separate three effects that can be conflated in boundary-centric models: (i) boundary-conditioned dynamics, (ii) measurement/tracking policy, and (iii) intervention policy. Persistence bias alone can substantially improve continuity of tracking without altering underlying dynamics, clarifying that observer-relative identity is not identical to physical stability. In active modes, the matched-budget random control shows that not all interventions are equally effective: random overrides fail to sustain identity continuity, while memory-guided intervention succeeds. This indicates that the crucial factor is informational coupling to prior structure rather than control magnitude.
+
+\section{Limitations}
+The present work aggregates $n=15$ seeds; expanding to larger batches and broader parameter sweeps would strengthen confidence. Identity is operational and observer-relative rather than an intrinsic physical invariant. The distance-to-boundary field is a global computation and breaks strict CA locality by design. Parameter values were chosen heuristically; sensitivity analyses over window size, budget, and thresholds remain important future work. To address the strongest tautology concern, we include a matched-budget random intervention control; its near-zero identity continuity supports the interpretation that memory-guided structure, not intervention alone, drives the observed gains.
+
+\section{Conclusion}
+We presented a boundary-driven discrete system where boundaries act as operational constraints and an embedded, finite observer measurably affects observer-relative identity continuity. Across boundary conditions and observer modes, persistence bias improves tracking continuity, while minimal, local, memory-guided intervention further increases continuity under perturbation. A matched-budget random intervention control fails to maintain identity continuity, demonstrating that informational coupling—not generic intervention—drives the advantage. The preserved ordering under toroidal wrap conditions supports a relational interpretation of boundary-driven identity continuity in closed worlds.
+
+% --- Flush floats before references (prevents any overlap/cut) ---
+\FloatBarrier
+\clearpage
+\FloatBarrier
+
+\begin{thebibliography}{99}
+
+\bibitem{conway1970}
+J.~H. Conway.
+\newblock The game of life.
+\newblock \emph{Scientific American}, 223(4):120--123, 1970.
+
+\bibitem{wolfram2002}
+S.~Wolfram.
+\newblock \emph{A New Kind of Science}.
+\newblock Wolfram Media, 2002.
+
+\bibitem{ilachinski2001}
+A.~Ilachinski.
+\newblock \emph{Cellular Automata: A Discrete Universe}.
+\newblock World Scientific, 2001.
+
+\bibitem{langton1990}
+C.~G. Langton.
+\newblock Computation at the edge of chaos: phase transitions and emergent computation.
+\newblock \emph{Physica D}, 42(1--3):12--37, 1990.
+
+\bibitem{kauffman1993}
+S.~A. Kauffman.
+\newblock \emph{The Origins of Order: Self-Organization and Selection in Evolution}.
+\newblock Oxford University Press, 1993.
+
+\bibitem{maturana1980}
+H.~R. Maturana and F.~J. Varela.
+\newblock \emph{Autopoiesis and Cognition: The Realization of the Living}.
+\newblock D. Reidel, 1980.
+
+\bibitem{varela1979}
+F.~J. Varela.
+\newblock \emph{Principles of Biological Autonomy}.
+\newblock North-Holland, 1979.
+
+\bibitem{varela1991}
+F.~J. Varela, E.~Thompson, and E.~Rosch.
+\newblock \emph{The Embodied Mind: Cognitive Science and Human Experience}.
+\newblock MIT Press, 1991.
+
+\bibitem{borgefors1986}
+G.~Borgefors.
+\newblock Distance transformations in digital images.
+\newblock \emph{Computer Vision, Graphics, and Image Processing}, 34(3):344--371, 1986.
+
+\bibitem{felzenszwalb2012}
+P.~F. Felzenszwalb and D.~P. Huttenlocher.
+\newblock Distance transforms of sampled functions.
+\newblock \emph{Theory of Computing}, 8(1):415--428, 2012.
+
+\bibitem{jaccard1901}
+P.~Jaccard.
+\newblock Etude comparative de la distribution florale dans une portion des Alpes et du Jura.
+\newblock \emph{Bulletin de la Societe Vaudoise des Sciences Naturelles}, 37:547--579, 1901.
+
+\end{thebibliography}
+
+\end{document}
+
+

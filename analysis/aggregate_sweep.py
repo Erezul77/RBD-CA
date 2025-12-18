@@ -1,11 +1,40 @@
 import argparse
 import csv
 import os
+import re
+import subprocess
 from collections import defaultdict
+from pathlib import Path
 from typing import Dict, List
 
 import numpy as np
 import matplotlib.pyplot as plt
+
+
+def parse_run_dir_name(run_dir_name: str):
+    """
+    Expected patterns:
+      object_off_tracked_zero_seed0
+      passive_persist_wrap_seed2
+    Returns: (mode, boundary_mode, seed)
+    """
+    parts = run_dir_name.split("_")
+
+    seed = None
+    boundary_mode = None
+    mode = run_dir_name
+
+    if parts and re.fullmatch(r"seed\d+", parts[-1]):
+        seed = int(parts[-1].replace("seed", ""))
+
+    if len(parts) >= 2 and parts[-2] in ("zero", "wrap"):
+        boundary_mode = parts[-2]
+        mode = "_".join(parts[:-2])
+    else:
+        if seed is not None:
+            mode = "_".join(parts[:-1])
+
+    return mode, boundary_mode, seed
 
 
 def read_metrics(path: str) -> Dict[str, List[float]]:
@@ -45,10 +74,38 @@ def main():
     os.makedirs(args.out, exist_ok=True)
 
     runs = []
-    with open(args.manifest, newline="", encoding="utf-8") as f:
-        reader = csv.DictReader(f)
-        for row in reader:
-            runs.append(row)
+    manifest = Path("analysis_outputs") / "sweep_manifest.txt"
+    metrics_paths = []
+    if manifest.exists():
+        lines = [ln.strip() for ln in manifest.read_text(encoding="utf-8").splitlines() if ln.strip()]
+        metrics_paths.extend(lines)
+    if not metrics_paths:
+        metrics_paths = [str(p) for p in Path("outputs").glob("*/metrics.csv")]
+
+    if manifest.exists():
+        with open(manifest, newline="", encoding="utf-8") as f:
+            header = f.readline()
+            f.seek(0)
+            if header.startswith("tag,") or header.startswith("tag;") or header.lower().startswith("tag"):
+                reader = csv.DictReader(f)
+                for row in reader:
+                    metrics_paths.append(row.get("metrics_path", "").strip())
+
+    metrics_paths = [p for p in metrics_paths if p]
+
+    for mp in metrics_paths:
+        metrics_path = Path(mp)
+        run_dir = metrics_path.parent
+        mode, boundary_mode, seed = parse_run_dir_name(run_dir.name)
+        runs.append({
+            "tag": run_dir.name,
+            "boundary_mode": boundary_mode or "unknown",
+            "observer_mode": mode,
+            "mode": mode,
+            "seed": seed if seed is not None else -1,
+            "run_dir": str(run_dir),
+            "metrics_path": str(metrics_path),
+        })
 
     per_run = []
 
@@ -62,10 +119,11 @@ def main():
         mask_recovery = [i for i, tv in enumerate(t) if 150 <= tv <= 250]
         recovery_vals = [core_delta[i] for i in mask_recovery] if core_delta else []
         entry = {
-            "tag": row["tag"],
-            "boundary_mode": row["boundary_mode"],
-            "observer_mode": row["observer_mode"],
-            "seed": row["seed"],
+            "tag": row.get("tag", ""),
+            "boundary_mode": row.get("boundary_mode", "unknown"),
+            "observer_mode": row.get("observer_mode", "unknown"),
+            "mode": row.get("mode", row.get("observer_mode", "unknown")),
+            "seed": row.get("seed", -1),
             "final_identity_score": series.get("identity_score", [float("nan")])[-1] if series.get("identity_score") else float("nan"),
             "mean_identity_score": nanmean(series.get("identity_score", [])),
             "final_core_size_delta": series.get("core_size_delta", [float("nan")])[-1] if series.get("core_size_delta") else float("nan"),
@@ -166,6 +224,18 @@ def main():
 
     print(f"Wrote summaries to {by_mode_csv} and {per_seed_csv}")
     print(f"Report: {report_path}")
+
+    # Optional: refresh paper table if build_report.py exists
+    build_report = Path("paper") / "build_report.py"
+    if build_report.exists():
+        try:
+            subprocess.run(
+                [os.sys.executable, str(build_report)],
+                check=True,
+                cwd=Path(".").resolve(),
+            )
+        except Exception as exc:
+            print(f"Warning: build_report.py failed: {exc}")
 
 
 if __name__ == "__main__":

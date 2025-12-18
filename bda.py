@@ -391,7 +391,7 @@ def step(grid: np.ndarray, params: Params, att_y: int, att_x: int, prev_core_glo
     b_eff = b_base.astype(np.float32)
     next_state_base = ((s >= a_base) & (s <= b_base)).astype(np.uint8)
 
-    subject_enabled = params.observer_mode in ("passive", "active")
+    subject_enabled = params.observer_mode in ("passive", "active", "active_random")
     track_global_only = (params.observer_mode == "off" and params.track_global_core)
 
     Wmask = np.zeros((H, W), dtype=bool)
@@ -412,7 +412,12 @@ def step(grid: np.ndarray, params: Params, att_y: int, att_x: int, prev_core_glo
         thing_mask = (grid == 1) & Wmask
         interior_mask = (grid == 1) & (~B) & Wmask
 
-        if params.subject_persist and int(prev_core_global.sum()) > 0:
+        if params.observer_mode == "active_random":
+            # no persistence bias; choose core by current interior/active only
+            core_candidate = largest_component(interior_mask) if int(interior_mask.sum()) > 0 else largest_component(thing_mask)
+            core_local = core_candidate
+            persist_iou = -1.0
+        elif params.subject_persist and int(prev_core_global.sum()) > 0:
             halo = dilate8(prev_core_global, steps=params.subject_persist_dilate)
             keep, hits, hit_rate = best_component_by_hits(thing_mask, halo)
             persist_iou = float(hit_rate)
@@ -487,6 +492,19 @@ def step(grid: np.ndarray, params: Params, att_y: int, att_x: int, prev_core_glo
             new_grid = next_state_base.copy()
             new_grid.flat[chosen] = next_state_mod.flat[chosen]
             observer_action_cells = chosen.size
+        observer_action_rate = (observer_action_cells / float(max(1, int(Wmask.sum())))) if Wmask.sum() > 0 else 0.0
+    elif params.observer_mode == "active_random":
+        # random intervention within window, no persistence bias or structure guidance
+        new_grid = next_state_base.copy()
+        window_indices = np.flatnonzero(Wmask)
+        budget_limit = int(math.floor(params.observer_budget * max(1, int(Wmask.sum()))))
+        if budget_limit > 0 and window_indices.size > 0:
+            chosen = rng.choice(window_indices, size=min(budget_limit, window_indices.size), replace=False)
+            rand_states = rng.integers(0, 2, size=chosen.size, dtype=np.uint8)
+            new_grid.flat[chosen] = rand_states
+            observer_action_cells = chosen.size
+        else:
+            observer_action_cells = 0
         observer_action_rate = (observer_action_cells / float(max(1, int(Wmask.sum())))) if Wmask.sum() > 0 else 0.0
     else:
         new_grid = next_state_base
@@ -694,7 +712,7 @@ def parse_args():
     p.add_argument("--no-subject-persist", action="store_true")
     p.add_argument("--subject-persist-dilate", type=int, default=2)
     p.add_argument("--subject-persist-min-hits", type=int, default=8)
-    p.add_argument("--observer-mode", type=str, choices=["off", "passive", "active"], default=None, help="off: no tracking/influence; passive: track but no influence; active: track + influence.")
+    p.add_argument("--observer-mode", type=str, choices=["off", "passive", "active", "active_random"], default=None, help="off: no tracking/influence; passive: track but no influence; active: track + influence; active_random: random intervention with same budget.")
     p.add_argument("--track-global-core", action="store_true", help="Track largest global component even when observer_mode=off.")
     p.add_argument("--perturb-on", action="store_true", help="Inject a local perturbation (shock).")
     p.add_argument("--perturb-t", type=int, default=150)
@@ -718,12 +736,8 @@ def main():
         final_mode = args.observer_mode
 
     boundary_mode = args.boundary_mode
-    if boundary_mode == "zero":
-        edge_mode = "fixed0"
-    else:
-        edge_mode = "wrap"
 
-    subject_enabled = final_mode in ("passive", "active")
+    subject_enabled = final_mode in ("passive", "active", "active_random")
 
     params = Params(
         H=args.H, W=args.W, steps=args.steps, seed=args.seed, init_density=args.init_density,
@@ -754,14 +768,12 @@ def main():
         experiment_tag=args.experiment_tag.strip(),
         identity_break_thresh=float(args.identity_break_thresh),
         observer_budget=max(0.0, float(args.observer_budget)),
-        # for backward compatibility
-        edge_mode=edge_mode,
     )
 
     ts = time.strftime("%Y%m%d_%H%M%S")
     tag = params.experiment_tag.replace(" ", "_")
     tag_safe = "".join(c if c.isalnum() or c in ("-", "_") else "_" for c in tag)
-    edge_suffix = f"_{params.edge_mode}"
+    edge_suffix = f"_{params.boundary_mode}"
     suffix = f"{edge_suffix}_{tag_safe}" if tag_safe else edge_suffix
     out_dir = args.out.strip() or os.path.join("outputs", f"dbc_subject_v1_3_{ts}{suffix}")
     ensure_dir(out_dir)
