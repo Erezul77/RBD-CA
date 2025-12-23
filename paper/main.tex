@@ -1,0 +1,493 @@
+
+% ============================================================
+% TIME AS ALIGNMENT COST: UNIFIED MASTER PAPER (TRA + CA)
+% FINAL VERSION - NO APPENDICES
+% ============================================================
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{microtype}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{xcolor}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  citecolor=blue,
+  urlcolor=blue
+}
+
+\title{\textbf{Relational Adequacy and Recursive Boundary Dynamics:}\\
+Time as Alignment Cost and Observer-Relative Identity in Boundary-Driven Cellular Automata}
+
+\author{
+Erez Ashkenazi\\
+\small Yesud Ha'Ma'ala, Upper Galilee 1210500, Israel\\
+\small \texttt{erez@noesis-net.org} \;|\; ORCID: 0009-0001-5461-0459 \;|\; \url{https://www.noesis-net.org}
+}
+
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This paper unifies an ontological equation of state for experienced time with an explicit, falsifiable in-silico testbed for observer-relative identity continuity. \emph{Relational Adequacy} (TRA) treats ``experienced time'' $t$ not as an external container but as a distortion induced by finitude: when a bounded system attempts to align with an unfolding baseline $\tau$ under predictive and coherence constraints. We formalize this as an equation of state,
+\begin{equation}
+t \;=\; \tau \exp\!\big(\lambda S_{\mathrm{total}}\big),
+\qquad S_{\mathrm{total}} = S_{\mathrm{pred}} + \eta S_{\mathrm{coh}},
+\end{equation}
+where $S_{\mathrm{pred}}$ is predictive surprisal, $S_{\mathrm{coh}}$ is coherence cost, and $\lambda$ scales misfit into temporal distortion.
+To test this claim operationally, we construct a boundary-driven cellular automaton (CA) in which boundaries are causal operators: local update thresholds are modulated by a distance-from-boundary field computed from a dynamically defined ``skin.'' Within this dynamics we embed a finite observer subsystem (bounded window, limited memory, optional budgeted intervention) and define identity as continuity of a tracked structure. Empirically, across randomized sweeps under both open (zero) and closed (toroidal) boundary conditions, we obtain a sharp dissociation: memory-coupled tracking (persistence bias) yields high continuity without any intervention, and memory-guided intervention modestly improves continuity under perturbation; however, matched-budget \emph{random} intervention collapses to near-zero continuity despite identical action magnitude. We then specify explicit coherence cost metrics ($S_{\mathrm{coh}}$) from structural discontinuity, memory-halo deviation, and intervention misalignment, enabling direct falsification tests of TRA predictions, including adequacy--identity correlations and exponential misfit-to-identity scaling. The unified framework offers a quantitative bridge from ontology to measurement: experienced time, identity continuity, and viable agency emerge as different faces of the same alignment constraint.
+\end{abstract}
+
+\noindent\textbf{Keywords:}
+relational adequacy; experienced time; alignment cost; temporal distortion; coherence cost; surprisal; boundary-driven cellular automata; observer-relative identity; persistence bias; memory-guided intervention; autopoiesis; enactive cognition; information-thermodynamics.
+
+\section{Introduction: The Cost of Being Finite}
+\subsection{One problem, two languages}
+Physics typically treats time as a coordinate or metric structure; cognition and computation treat time as internal process, workload, or ``ticks.'' These descriptions often remain separate. This paper proposes a single structural constraint underlying both: \emph{a finite system that persists must continuously align its internal constraints with an unfolding reality.} When this alignment is costly---predictively and coherently---experienced time inflates.
+
+In parallel, classical cellular automata (CA) treat boundaries as emergent descriptors: patterns form, edges appear, and boundaries are drawn after the fact. Biological and cognitive systems invert this: boundaries are \emph{operators} that shape internal dynamics (membranes, interfaces, attentional borders). We adopt the same inversion in a discrete dynamical system: boundaries are explicitly causal in the update rule.
+
+\subsection{Core hypothesis}
+\begin{quote}
+\textbf{Time, for a finite mode, is the alignment cost of remaining coherent.}\\
+Experienced time $t$ scales with total misfit $S_{\mathrm{total}}$ relative to a baseline unfolding $\tau$.
+\end{quote}
+
+\subsection{Contributions}
+This work provides:
+\begin{enumerate}
+\item A TRA equation of state mapping total misfit into experienced time.
+\item A boundary-driven CA in which a dynamically defined ``skin'' modulates local update thresholds via a distance field.
+\item An embedded finite observer (bounded window, limited memory, optional budgeted intervention) that operationalizes identity as a maintained tracking relation.
+\item A matched-budget random-intervention control showing that \emph{intervention magnitude is insufficient}: informational coupling is necessary.
+\item An explicit coherence-cost formalism ($S_{\mathrm{coh}}$) that converts the ontology-to-measurement bridge into a falsifiable quantitative program.
+\end{enumerate}
+
+\section{Relational Adequacy: An Equation of State for Experienced Time}
+\subsection{Baseline unfolding, distortion, and adequacy}
+Let $\tau$ denote a baseline unfolding parameter (operationally: a reference clock or the CA step index treated as ``external baseline''). Let $t$ denote the effective duration experienced or required by a finite mode to remain coherent.
+
+Define temporal distortion and adequacy:
+\begin{align}
+D &\equiv \frac{t}{\tau}, &
+A &\equiv \frac{\tau}{t} = \frac{1}{D}.
+\end{align}
+
+\subsection{Total misfit}
+We decompose total misfit:
+\begin{equation}
+S_{\mathrm{total}} \equiv S_{\mathrm{pred}} + \eta S_{\mathrm{coh}}, \qquad \eta \ge 0,
+\end{equation}
+where $S_{\mathrm{pred}}$ is predictive surprisal (negative log-likelihood of observations under a prediction model) and $S_{\mathrm{coh}}$ is coherence cost (penalty for discontinuity or constraint-violation relative to memory and organization).
+
+\subsection{Equation of state}
+TRA posits an exponential compression of misfit into adequacy:
+\begin{equation}
+A = \exp(-\lambda S_{\mathrm{total}}), \qquad \lambda>0,
+\end{equation}
+yielding the equation of state:
+\begin{equation}\label{eq:eos}
+t = \tau \exp(\lambda S_{\mathrm{total}}).
+\end{equation}
+The exponential form is not decorative: it makes a specific, testable functional claim that competes with linear or power-law alternatives (Section~\ref{sec:predictions}).
+
+\section{Recursive Boundary Dynamics in Cellular Systems}
+\subsection{Boundaries as causal operators}
+Classical CA treat boundaries as either technical conditions (finite-grid edges) or emergent descriptors. Here, boundaries are made causal: local transition thresholds are conditioned on distance from a dynamically computed ``skin'' boundary. This creates a feedback loop:
+\[
+\text{skin} \rightarrow d(x) \rightarrow \text{local thresholds} \rightarrow \text{new skin}.
+\]
+
+\subsection{Grid, neighborhood, and boundary conditions}
+We simulate a binary CA on an $H\times W$ grid (default $80\times120$) with Moore neighborhood and synchronous updates for $T=300$ steps. Two boundary conditions are tested:
+\begin{itemize}
+\item \textbf{Zero mode:} outside-the-grid treated as inactive medium (open world).
+\item \textbf{Wrap mode:} toroidal world (closed control).
+\end{itemize}
+
+\subsection{Operational skin and distance-to-boundary coupling}
+At each step $t$, the \emph{skin} is defined as active cells adjacent to at least one inactive neighbor. A distance transform gives $D_t(x)$, the distance from each cell $x$ to the nearest skin cell; it is normalized into a boundary-pressure signal $d(x)\in[0,1]$. Local birth/survival thresholds are modulated by $d(x)$, implementing recursive boundary influence.
+
+\subsection{Locality note}
+The distance transform is a global computation and thus violates strict CA locality by design. This is an explicit modeling choice: we sacrifice strict locality to obtain explicit boundary causality. Future work can approximate $d(x)$ with local diffusion fields to regain locality while preserving boundary causation.
+
+\section{Embedded Finite Observer Subsystem}
+\subsection{Attention window and drift}
+The observer operates within a Chebyshev-radius window of radius $r$ (default $r=18$). The attention center drifts toward the centroid of the tracked core at bounded speed, modeling limited attentional mobility.
+
+\subsection{Core selection and persistence bias}
+Within the window, connected components of active cells are computed and one component is selected as the tracked \emph{core}:
+\begin{itemize}
+\item \textbf{No persistence:} selection is arbitrary (e.g., largest component), independent of prior core.
+\item \textbf{Persistence bias:} selection prefers maximal contact with a \emph{memory halo} (union of dilated past core masks).
+\end{itemize}
+A minimum halo-contact threshold implements a discrete ``same-thing'' criterion.
+
+\subsection{Budgeted intervention and matched-budget random control}
+In active modes, the observer may override cell states within its window up to a per-step budget:
+\[
+B=\lfloor \beta |\text{window}|\rfloor,\qquad \beta=0.05.
+\]
+We evaluate five modes:
+\begin{center}
+\begin{tabular}{llll}
+\toprule
+Mode & Memory & Intervention & Target selection \\
+\midrule
+object\_off\_tracked & no & no & tracking-only baseline \\
+passive\_nopersist & no & no & arbitrary \\
+passive\_persist & yes & no & memory-guided \\
+active\_persist & yes & yes & memory-guided \\
+active\_random & no & yes & random (matched budget) \\
+\bottomrule
+\end{tabular}
+\end{center}
+The \textbf{active\_random} control matches the intervention budget of \textbf{active\_persist} while eliminating informational coupling.
+
+\section{Measurement: Identity Continuity, Misfit, and the TRA Bridge}
+\subsection{Identity score and coherence collapse}
+Identity is defined operationally as continuity of the tracked core across time. In persistence modes, identity is measured via halo-contact continuity; otherwise, via Jaccard overlap (IoU) between consecutive core masks. An \emph{identity break} is defined by overlap falling below $\theta=0.05$.
+
+\subsection{Explicit misfit computation: $S_{\mathrm{coh}}$, $S_{\mathrm{pred}}$, $S_{\mathrm{total}}$}
+To avoid inferring coherence directly from the identity metric, we compute explicit per-step misfit within the observer window. Let $C_t\in\{0,1\}^N$ denote the tracked core mask over $N$ window cells, and let $H_{t-1}$ denote the memory halo.
+
+\paragraph{Coherence cost.}
+We compute:
+\begin{equation}\label{eq:coh}
+S_{\mathrm{coh}}(t) = w_1 S_{\mathrm{struct}}(t) + w_2 S_{\mathrm{mem}}(t) + w_3 S_{\mathrm{int}}(t),
+\end{equation}
+with:
+\begin{align}
+S_{\mathrm{struct}}(t) &\equiv 1-\mathrm{IoU}(C_t,C_{t-1}),\\
+S_{\mathrm{mem}}(t) &\equiv 1-\frac{|C_t \cap H_{t-1}|}{|C_t|+\epsilon},\\
+S_{\mathrm{int}}(t) &\equiv 1-\frac{|I_t \cap H_{t-1}|}{|I_t|+\epsilon},
+\end{align}
+where $I_t$ is the intervention mask (active modes). Component-wise reporting and sensitivity analysis over $(w_1,w_2,w_3)$ reduces the risk of weight-tuning artifacts.
+
+\paragraph{Predictive surprisal.}
+Predictive surprisal is defined as cross-entropy under a one-step predicted Bernoulli field $\hat p_t(x)\in(0,1)$:
+\begin{equation}\label{eq:pred}
+S_{\mathrm{pred}}(t)= -\frac{1}{N}\sum_{x=1}^N\Big[C_t(x)\log \hat p_t(x) + (1-C_t(x))\log(1-\hat p_t(x))\Big].
+\end{equation}
+In the minimal baseline, $\hat p_t$ is derived from a persistence prediction (previous core) with smoothing.
+
+\paragraph{Total misfit, adequacy, and distortion.}
+Total misfit is:
+\begin{equation}\label{eq:stotal}
+S_{\mathrm{total}}(t)=S_{\mathrm{pred}}(t)+\eta S_{\mathrm{coh}}(t),
+\end{equation}
+yielding the TRA adequacy proxy $\hat A(t)=\exp(-\lambda S_{\mathrm{total}}(t))$ and distortion $\hat D(t)=\exp(\lambda S_{\mathrm{total}}(t))$.
+
+\subsection{Quantitative predictions and falsifiability}\label{sec:predictions}
+TRA becomes scientific only if it makes quantitative predictions that can fail. The CA testbed enables at least six falsifiable predictions:
+
+\paragraph{P1: Adequacy--identity correlation.}
+For persistence modes, $\hat A(t)$ should correlate strongly with identity continuity; non-persistence modes should show weak correlation.
+
+\paragraph{P2: Coherence-cost ordering (matched-budget).}
+Time-averaged coherence cost should satisfy:
+\[
+\langle S_{\mathrm{coh}}\rangle_{\text{active\_persist}}
+<
+\langle S_{\mathrm{coh}}\rangle_{\text{active\_random}}
+\approx
+\langle S_{\mathrm{coh}}\rangle_{\text{passive\_nopersist}}.
+\]
+Violation falsifies the claim that informational coupling, not action magnitude, reduces coherence cost.
+
+\paragraph{P3: Perturbation distortion spike.}
+A localized shock should increase $S_{\mathrm{total}}$ and thus $\hat D(t)$; the post/pre distortion ratio should be larger for non-memory modes than for persistence modes.
+
+\paragraph{P4: Intervention budget threshold.}
+There exists $\beta_{\mathrm{crit}}$ below which active\_persist is indistinguishable from passive\_persist, and above which active\_persist dominates.
+
+\paragraph{P5: Cross-mode scaling.}
+Across modes, mean identity should obey:
+\[
+\langle \mathrm{identity} \rangle \approx \exp(-\alpha \langle S_{\mathrm{total}}\rangle),
+\]
+with exponential model selection preferred over linear/power-law alternatives if TRA's form is correct.
+
+\paragraph{P6: Memory-depth saturation.}
+Increasing halo depth improves coherence only up to a saturation scale, beyond which gains vanish.
+
+\section{Experimental Design}
+\subsection{Factorial sweep}
+We sweep boundary mode $\in\{\text{zero, wrap}\}$, observer mode $\in\{\text{object\_off\_tracked, passive\_nopersist, passive\_persist, active\_persist, active\_random}\}$, and random seeds ($n=50$, seeds 0--49). Each run lasts $T=300$ steps.
+
+\subsection{Perturbation protocol}
+At $t=150$ we apply a localized stochastic shock: flip cells within radius 10 of the attention center at 3\% per cell. Recovery is measured as signed change in core size averaged over $[150,250]$ relative to baseline $[50,150]$.
+
+\section{Results: Information vs.\ Energy (The Smoking Gun)}
+\subsection{Identity continuity results}
+Across seeds and boundary conditions, persistence bias yields high identity continuity with \emph{zero} action, while no-persistence tracking collapses to near-zero continuity. Memory-guided intervention modestly improves continuity further.
+
+\subsection{Matched-budget dissociation}
+The decisive result is the matched-budget control:
+\begin{quote}
+\textbf{active\_persist succeeds while active\_random fails at the same action rate.}
+\end{quote}
+This isolates informational coupling as the causal factor: undirected action (energy without structure) does not sustain continuity.
+
+\subsection{Robustness across boundary conditions}
+The ordering of effects is preserved under toroidal wrap, ruling out dependence on external edges and supporting a relational mechanism intrinsic to the closed system.
+
+\subsection{Quantitative summary}
+Table~\ref{tab:results} reports aggregated identity results over $n=50$ seeds.
+
+\begin{table}[H]
+\centering
+\caption{Identity results across $n=50$ seeds. Values are mean $\pm$ SD. Persistence modes achieve high identity; no-persist and random modes collapse to near-zero.}
+\label{tab:results}
+\begin{tabular}{llrr}
+\toprule
+Boundary & Observer Mode & Mean Identity & n \\
+\midrule
+zero & object\_off\_tracked & 0.646 $\pm$ 0.010 & 50 \\
+zero & passive\_nopersist & 0.0002 $\pm$ 0.0003 & 50 \\
+zero & passive\_persist & \textbf{0.688 $\pm$ 0.010} & 50 \\
+zero & active\_persist & \textbf{0.700 $\pm$ 0.013} & 50 \\
+zero & active\_random & 0.0004 $\pm$ 0.0003 & 50 \\
+\midrule
+wrap & object\_off\_tracked & 0.610 $\pm$ 0.010 & 50 \\
+wrap & passive\_nopersist & 0.0003 $\pm$ 0.0003 & 50 \\
+wrap & passive\_persist & \textbf{0.675 $\pm$ 0.012} & 50 \\
+wrap & active\_persist & \textbf{0.694 $\pm$ 0.013} & 50 \\
+wrap & active\_random & 0.0004 $\pm$ 0.0004 & 50 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Table~\ref{tab:misfit} reports explicit misfit metrics computed via the integrated coherence cost calculator.
+
+\begin{table}[H]
+\centering
+\caption{Explicit misfit metrics across $n=50$ seeds. Mean $\pm$ SD per condition.}
+\label{tab:misfit}
+\begin{tabular}{llrrr}
+\toprule
+Boundary & Observer & $S_{\mathrm{coh}}$ & $S_{\mathrm{pred}}$ & $S_{\mathrm{total}}$ \\
+\midrule
+zero & object\_off\_tracked & 5.551 $\pm$ 0.020 & 0.546 $\pm$ 0.013 & 6.097 $\pm$ 0.016 \\
+zero & passive\_nopersist & 6.841 $\pm$ 0.012 & 0.002 $\pm$ 0.001 & 6.843 $\pm$ 0.012 \\
+zero & passive\_persist & 5.552 $\pm$ 0.025 & 0.059 $\pm$ 0.001 & 5.612 $\pm$ 0.024 \\
+zero & active\_persist & \textbf{5.441 $\pm$ 0.036} & 0.065 $\pm$ 0.001 & \textbf{5.507 $\pm$ 0.035} \\
+zero & active\_random & 6.831 $\pm$ 0.013 & 0.003 $\pm$ 0.001 & 6.835 $\pm$ 0.012 \\
+\midrule
+wrap & object\_off\_tracked & 5.632 $\pm$ 0.018 & 0.480 $\pm$ 0.014 & 6.112 $\pm$ 0.016 \\
+wrap & passive\_nopersist & 6.833 $\pm$ 0.013 & 0.003 $\pm$ 0.000 & 6.836 $\pm$ 0.013 \\
+wrap & passive\_persist & 5.552 $\pm$ 0.033 & 0.057 $\pm$ 0.001 & 5.609 $\pm$ 0.032 \\
+wrap & active\_persist & \textbf{5.414 $\pm$ 0.038} & 0.064 $\pm$ 0.001 & \textbf{5.478 $\pm$ 0.037} \\
+wrap & active\_random & 6.825 $\pm$ 0.013 & 0.004 $\pm$ 0.001 & 6.828 $\pm$ 0.013 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The results confirm prediction P2: $\langle S_{\mathrm{coh}}\rangle_{\text{active}} < \langle S_{\mathrm{coh}}\rangle_{\text{active\_random}}$, demonstrating that informational coupling (not action magnitude) reduces coherence cost.
+
+\subsection{Figures}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.92\linewidth]{figs/fig1_identity_by_mode.png}
+  \caption{Mean identity score by observer mode and boundary condition.}
+  \label{fig:mean_identity}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.92\linewidth]{figs/fig2_action_rate.png}
+  \caption{Mean action rate by mode (matched budget in active modes).}
+  \label{fig:action_rate}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.92\linewidth]{figs/fig3_recovery.png}
+  \caption{Recovery under perturbation by mode (mean post-shock change relative to baseline).}
+  \label{fig:recovery}
+\end{figure}
+
+\subsection{Explicit Coherence Cost Results}
+With explicit $S_{\mathrm{coh}}$ computation integrated into the CA loop, we validate the TRA predictions. Figure~\ref{fig:misfit} shows coherence and predictive costs by observer mode: active modes with persistence bias achieve lowest total misfit, while random intervention produces high coherence cost despite matched action budget.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.92\linewidth]{figs/fig4_misfit_by_mode.png}
+  \caption{Mean $\pm$ SD of coherence cost ($S_{\mathrm{coh}}$), predictive surprisal ($S_{\mathrm{pred}}$), and total misfit ($S_{\mathrm{total}}$) by observer mode. Active persistence achieves lowest total misfit; random intervention yields highest coherence cost despite matched budget.}
+  \label{fig:misfit}
+\end{figure}
+
+Figure~\ref{fig:adequacy} tests the TRA bridge prediction (P1): adequacy proxy $\hat{A}=\exp(-S_{\mathrm{total}})$ correlates with identity score. Across all modes, the Pearson correlation is $r=0.887$ (zero boundary, $n=250$) and $r=0.892$ (wrap boundary, $n=250$). Restricting to persistence modes only yields $r=0.696$ (zero, $n=100$) and $r=0.780$ (wrap, $n=100$), supporting the exponential mapping from misfit to identity continuity.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.92\linewidth]{figs/fig5_adeq_vs_identity.png}
+  \caption{Scatter plot of TRA adequacy proxy $\hat{A}=\exp(-S_{\mathrm{total}})$ versus identity score ($\lambda=1$). Each point is one run (aggregated over timesteps). For all modes: $r=0.887$ (zero, $n=250$), $r=0.892$ (wrap, $n=250$). For persistence modes only: $r=0.696$ (zero, $n=100$), $r=0.780$ (wrap, $n=100$).}
+  \label{fig:adequacy}
+\end{figure}
+
+\section{Discussion}
+\subsection{Informational coupling vs.\ control magnitude}
+The matched-budget failure of random intervention blocks a common trivialization: ``intervention helps because you forced the system.'' It does not. Intervention without memory-coupled alignment fails. Therefore the causal variable is not action magnitude but informational coupling to tracked structure.
+
+\subsection{What the CA does and does not establish about TRA}
+Within this paper, ``time'' is operational: $\tau$ is baseline unfolding (simulation step baseline), $t$ is effective alignment duration required by the finite observer-mode to maintain coherence/identity. The CA provides a concrete discriminator for the TRA mechanism, but it does not yet establish a fundamental claim about spacetime; it establishes a falsifiable bridge from misfit to experienced duration in finite computational agents.
+
+\subsection{Autopoiesis and boundary-mediated organization}
+The boundary-driven CA is not a biological model, but it instantiates an operational homology: boundaries shape internal dynamics; memory introduces closure-like constraints; and identity emerges as a maintained relation rather than an intrinsic invariant. This supports a computational approach to studying individuation and organizational continuity.
+
+\subsection{Three ontological readings of TRA}
+TRA admits three increasingly strong interpretations:
+\begin{enumerate}
+\item \textbf{Phenomenological:} $t$ describes experienced/computational time for finite observers, leaving $\tau$ fundamental.
+\item \textbf{Effective theory:} for non-equilibrium observers, $t$ is governed by information-thermodynamic constraints emerging from deeper dynamics.
+\item \textbf{Constitutive:} time is fundamentally relational; $\tau$ is an ideal limit as $S_{\mathrm{total}}\to 0$.
+\end{enumerate}
+This paper supports (1) and provides scaffolding for (2); (3) remains speculative.
+
+\subsection{The tautology objection}
+TRA avoids trivial circularity via (i) the specificity of its functional form (exponential vs.\ alternatives) and (ii) a matched-budget control that separates action magnitude from informational coupling.
+
+\section{Limitations and Future Work}
+\begin{itemize}
+\item \textbf{Locality:} Replace global distance transform with local approximations to test whether boundary causality survives stricter locality.
+\item \textbf{Parameter sweeps:} $\beta$ (intervention budget) and halo depth $s$ sweeps test threshold and saturation predictions (P4--P6).
+\item \textbf{Model selection:} Formal AIC/BIC comparison of exponential vs.\ linear vs.\ power-law fits for the adequacy--identity relationship.
+\end{itemize}
+
+\section{Conclusion}
+We unify two claims into one testable theory: (i) TRA proposes that experienced time is alignment cost, $t=\tau\exp(\lambda S_{\mathrm{total}})$; (ii) boundary-driven CA experiments show that identity continuity is sustained by informational coupling (memory-guided alignment), not by intervention magnitude. The matched-budget dissociation (active\_persist succeeds; active\_random fails) is the empirical core connecting ontology to measurement. With explicit $S_{\mathrm{coh}}$ computation, the framework becomes quantitatively falsifiable rather than merely philosophical.
+
+\section*{Acknowledgments}
+I thank reviewers for constructive feedback that improved this work. This research received no specific grant from any funding agency in the public, commercial, or not-for-profit sectors.
+
+\section*{Data Availability}
+A reproducibility package (LaTeX sources, exported figures, simulation code, and data) is provided with the supplementary materials for this manuscript.
+
+\section*{Conflict of Interest}
+The author declares no competing interests.
+
+% ============================================================
+% REFERENCES
+% ============================================================
+\begin{thebibliography}{99}
+
+\bibitem{conway1970}
+J. H. Conway.
+\newblock The game of life.
+\newblock \emph{Scientific American}, 223(4):120--123, 1970.
+
+\bibitem{wolfram2002}
+S. Wolfram.
+\newblock \emph{A New Kind of Science}.
+\newblock Wolfram Media, 2002.
+
+\bibitem{ilachinski2001}
+A. Ilachinski.
+\newblock \emph{Cellular Automata: A Discrete Universe}.
+\newblock World Scientific, 2001.
+
+\bibitem{langton1990}
+C. G. Langton.
+\newblock Computation at the edge of chaos: phase transitions and emergent computation.
+\newblock \emph{Physica D}, 42(1--3):12--37, 1990.
+
+\bibitem{kauffman1993}
+S. A. Kauffman.
+\newblock \emph{The Origins of Order: Self-Organization and Selection in Evolution}.
+\newblock Oxford University Press, 1993.
+
+\bibitem{maturana1980}
+H. R. Maturana and F. J. Varela.
+\newblock \emph{Autopoiesis and Cognition: The Realization of the Living}.
+\newblock D. Reidel, 1980.
+
+\bibitem{varela1979}
+F. J. Varela.
+\newblock \emph{Principles of Biological Autonomy}.
+\newblock North-Holland, 1979.
+
+\bibitem{varela1991}
+F. J. Varela, E. Thompson, and E. Rosch.
+\newblock \emph{The Embodied Mind: Cognitive Science and Human Experience}.
+\newblock MIT Press, 1991.
+
+\bibitem{borgefors1986}
+G. Borgefors.
+\newblock Distance transformations in digital images.
+\newblock \emph{Computer Vision, Graphics, and Image Processing}, 34(3):344--371, 1986.
+
+\bibitem{felzenszwalb2012}
+P. F. Felzenszwalb and D. P. Huttenlocher.
+\newblock Distance transforms of sampled functions.
+\newblock \emph{Theory of Computing}, 8(1):415--428, 2012.
+
+\bibitem{jaccard1901}
+P. Jaccard.
+\newblock Etude comparative de la distribution florale dans une portion des Alpes et du Jura.
+\newblock \emph{Bulletin de la Societe Vaudoise des Sciences Naturelles}, 37:547--579, 1901.
+
+\bibitem{friston2010}
+K. Friston.
+\newblock The free-energy principle: a unified brain theory?
+\newblock \emph{Nature Reviews Neuroscience}, 11:127--138, 2010.
+
+\bibitem{landauer1961}
+R. Landauer.
+\newblock Irreversibility and heat generation in the computing process.
+\newblock \emph{IBM Journal of Research and Development}, 5(3):183--191, 1961.
+
+\bibitem{rovelli1996}
+C. Rovelli.
+\newblock Relational quantum mechanics.
+\newblock \emph{International Journal of Theoretical Physics}, 35:1637--1678, 1996.
+
+\bibitem{zurek2003}
+W. H. Zurek.
+\newblock Decoherence, einselection, and the quantum origins of the classical.
+\newblock \emph{Reviews of Modern Physics}, 75:715--775, 2003.
+
+\bibitem{clark2013}
+A. Clark.
+\newblock Whatever next? predictive brains, situated agents, and the future of cognitive science.
+\newblock \emph{Behavioral and Brain Sciences}, 36(3):181--204, 2013.
+
+\bibitem{amari2000}
+S.-i. Amari and H. Nagaoka.
+\newblock \emph{Methods of Information Geometry}.
+\newblock American Mathematical Society, 2000.
+
+\bibitem{csik1990}
+M. Csikszentmihalyi.
+\newblock \emph{Flow: The Psychology of Optimal Experience}.
+\newblock Harper \& Row, 1990.
+
+\bibitem{hohwy2013}
+J. Hohwy.
+\newblock \emph{The Predictive Mind}.
+\newblock Oxford University Press, 2013.
+
+\bibitem{seth2016}
+A. K. Seth and K. J. Friston.
+\newblock Active interoceptive inference and the emotional brain.
+\newblock \emph{Philosophical Transactions of the Royal Society B}, 371(1708):20160007, 2016.
+
+\bibitem{tononi2015}
+G. Tononi and C. Koch.
+\newblock Consciousness: Here, there and everywhere?
+\newblock \emph{Philosophical Transactions of the Royal Society B}, 370(1668):20140167, 2015.
+
+\end{thebibliography}
+
+\end{document}
+

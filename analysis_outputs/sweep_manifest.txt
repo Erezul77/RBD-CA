@@ -1,151 +1,505 @@
-﻿
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\object_off_tracked_zero_seed0\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\passive_nopersist_zero_seed0\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\passive_persist_zero_seed0\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\active_persist_zero_seed0\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\active_random_zero_seed0\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\object_off_tracked_wrap_seed0\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\passive_nopersist_wrap_seed0\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\passive_persist_wrap_seed0\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\active_persist_wrap_seed0\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\active_random_wrap_seed0\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\object_off_tracked_zero_seed1\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\passive_nopersist_zero_seed1\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\passive_persist_zero_seed1\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\active_persist_zero_seed1\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\active_random_zero_seed1\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\object_off_tracked_wrap_seed1\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\passive_nopersist_wrap_seed1\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\passive_persist_wrap_seed1\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\active_persist_wrap_seed1\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\active_random_wrap_seed1\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\object_off_tracked_zero_seed2\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\passive_nopersist_zero_seed2\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\passive_persist_zero_seed2\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\active_persist_zero_seed2\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\active_random_zero_seed2\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\object_off_tracked_wrap_seed2\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\passive_nopersist_wrap_seed2\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\passive_persist_wrap_seed2\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\active_persist_wrap_seed2\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\active_random_wrap_seed2\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\object_off_tracked_zero_seed3\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\passive_nopersist_zero_seed3\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\passive_persist_zero_seed3\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\active_persist_zero_seed3\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\active_random_zero_seed3\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\object_off_tracked_wrap_seed3\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\passive_nopersist_wrap_seed3\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\passive_persist_wrap_seed3\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\active_persist_wrap_seed3\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\active_random_wrap_seed3\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\object_off_tracked_zero_seed4\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\passive_nopersist_zero_seed4\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\passive_persist_zero_seed4\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\active_persist_zero_seed4\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\active_random_zero_seed4\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\object_off_tracked_wrap_seed4\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\passive_nopersist_wrap_seed4\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\passive_persist_wrap_seed4\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\active_persist_wrap_seed4\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\active_random_wrap_seed4\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\object_off_tracked_zero_seed5\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\passive_nopersist_zero_seed5\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\passive_persist_zero_seed5\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\active_persist_zero_seed5\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\active_random_zero_seed5\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\object_off_tracked_wrap_seed5\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\passive_nopersist_wrap_seed5\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\passive_persist_wrap_seed5\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\active_persist_wrap_seed5\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\active_random_wrap_seed5\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\object_off_tracked_zero_seed6\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\passive_nopersist_zero_seed6\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\passive_persist_zero_seed6\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\active_persist_zero_seed6\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\active_random_zero_seed6\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\object_off_tracked_wrap_seed6\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\passive_nopersist_wrap_seed6\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\passive_persist_wrap_seed6\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\active_persist_wrap_seed6\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\active_random_wrap_seed6\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\object_off_tracked_zero_seed7\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\passive_nopersist_zero_seed7\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\passive_persist_zero_seed7\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\active_persist_zero_seed7\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\active_random_zero_seed7\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\object_off_tracked_wrap_seed7\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\passive_nopersist_wrap_seed7\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\passive_persist_wrap_seed7\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\active_persist_wrap_seed7\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\active_random_wrap_seed7\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\object_off_tracked_zero_seed8\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\passive_nopersist_zero_seed8\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\passive_persist_zero_seed8\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\active_persist_zero_seed8\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\active_random_zero_seed8\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\object_off_tracked_wrap_seed8\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\passive_nopersist_wrap_seed8\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\passive_persist_wrap_seed8\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\active_persist_wrap_seed8\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\active_random_wrap_seed8\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\object_off_tracked_zero_seed9\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\passive_nopersist_zero_seed9\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\passive_persist_zero_seed9\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\active_persist_zero_seed9\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\active_random_zero_seed9\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\object_off_tracked_wrap_seed9\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\passive_nopersist_wrap_seed9\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\passive_persist_wrap_seed9\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\active_persist_wrap_seed9\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\active_random_wrap_seed9\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\object_off_tracked_zero_seed10\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\passive_nopersist_zero_seed10\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\passive_persist_zero_seed10\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\active_persist_zero_seed10\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\active_random_zero_seed10\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\object_off_tracked_wrap_seed10\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\passive_nopersist_wrap_seed10\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\passive_persist_wrap_seed10\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\active_persist_wrap_seed10\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\active_random_wrap_seed10\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\object_off_tracked_zero_seed11\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\passive_nopersist_zero_seed11\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\passive_persist_zero_seed11\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\active_persist_zero_seed11\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\active_random_zero_seed11\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\object_off_tracked_wrap_seed11\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\passive_nopersist_wrap_seed11\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\passive_persist_wrap_seed11\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\active_persist_wrap_seed11\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\active_random_wrap_seed11\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\object_off_tracked_zero_seed12\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\passive_nopersist_zero_seed12\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\passive_persist_zero_seed12\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\active_persist_zero_seed12\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\active_random_zero_seed12\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\object_off_tracked_wrap_seed12\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\passive_nopersist_wrap_seed12\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\passive_persist_wrap_seed12\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\active_persist_wrap_seed12\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\active_random_wrap_seed12\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\object_off_tracked_zero_seed13\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\passive_nopersist_zero_seed13\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\passive_persist_zero_seed13\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\active_persist_zero_seed13\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\active_random_zero_seed13\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\object_off_tracked_wrap_seed13\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\passive_nopersist_wrap_seed13\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\passive_persist_wrap_seed13\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\active_persist_wrap_seed13\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\active_random_wrap_seed13\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\object_off_tracked_zero_seed14\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\passive_nopersist_zero_seed14\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\passive_persist_zero_seed14\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\active_persist_zero_seed14\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\active_random_zero_seed14\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\object_off_tracked_wrap_seed14\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\passive_nopersist_wrap_seed14\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\passive_persist_wrap_seed14\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\active_persist_wrap_seed14\metrics.csv
-C:\Users\erezs\OneDrive\שולחן העבודה\RBD-CA\outputs\active_random_wrap_seed14\metrics.csv
+﻿# Sweep Manifest - 500 expected runs (2 boundaries Ã— 5 modes Ã— 50 seeds)
+# Format: boundary,mode,seed,status,path
+
+zero,object_off_tracked,0,OK,outputs_sweep50\object_off_tracked_zero_seed0\metrics.csv
+zero,passive_nopersist,0,OK,outputs_sweep50\passive_nopersist_zero_seed0\metrics.csv
+zero,passive_persist,0,OK,outputs_sweep50\passive_persist_zero_seed0\metrics.csv
+zero,active_persist,0,OK,outputs_sweep50\active_persist_zero_seed0\metrics.csv
+zero,active_random,0,OK,outputs_sweep50\active_random_zero_seed0\metrics.csv
+wrap,object_off_tracked,0,OK,outputs_sweep50\object_off_tracked_wrap_seed0\metrics.csv
+wrap,passive_nopersist,0,OK,outputs_sweep50\passive_nopersist_wrap_seed0\metrics.csv
+wrap,passive_persist,0,OK,outputs_sweep50\passive_persist_wrap_seed0\metrics.csv
+wrap,active_persist,0,OK,outputs_sweep50\active_persist_wrap_seed0\metrics.csv
+wrap,active_random,0,OK,outputs_sweep50\active_random_wrap_seed0\metrics.csv
+zero,object_off_tracked,1,OK,outputs_sweep50\object_off_tracked_zero_seed1\metrics.csv
+zero,passive_nopersist,1,OK,outputs_sweep50\passive_nopersist_zero_seed1\metrics.csv
+zero,passive_persist,1,OK,outputs_sweep50\passive_persist_zero_seed1\metrics.csv
+zero,active_persist,1,OK,outputs_sweep50\active_persist_zero_seed1\metrics.csv
+zero,active_random,1,OK,outputs_sweep50\active_random_zero_seed1\metrics.csv
+wrap,object_off_tracked,1,OK,outputs_sweep50\object_off_tracked_wrap_seed1\metrics.csv
+wrap,passive_nopersist,1,OK,outputs_sweep50\passive_nopersist_wrap_seed1\metrics.csv
+wrap,passive_persist,1,OK,outputs_sweep50\passive_persist_wrap_seed1\metrics.csv
+wrap,active_persist,1,OK,outputs_sweep50\active_persist_wrap_seed1\metrics.csv
+wrap,active_random,1,OK,outputs_sweep50\active_random_wrap_seed1\metrics.csv
+zero,object_off_tracked,2,OK,outputs_sweep50\object_off_tracked_zero_seed2\metrics.csv
+zero,passive_nopersist,2,OK,outputs_sweep50\passive_nopersist_zero_seed2\metrics.csv
+zero,passive_persist,2,OK,outputs_sweep50\passive_persist_zero_seed2\metrics.csv
+zero,active_persist,2,OK,outputs_sweep50\active_persist_zero_seed2\metrics.csv
+zero,active_random,2,OK,outputs_sweep50\active_random_zero_seed2\metrics.csv
+wrap,object_off_tracked,2,OK,outputs_sweep50\object_off_tracked_wrap_seed2\metrics.csv
+wrap,passive_nopersist,2,OK,outputs_sweep50\passive_nopersist_wrap_seed2\metrics.csv
+wrap,passive_persist,2,OK,outputs_sweep50\passive_persist_wrap_seed2\metrics.csv
+wrap,active_persist,2,OK,outputs_sweep50\active_persist_wrap_seed2\metrics.csv
+wrap,active_random,2,OK,outputs_sweep50\active_random_wrap_seed2\metrics.csv
+zero,object_off_tracked,3,OK,outputs_sweep50\object_off_tracked_zero_seed3\metrics.csv
+zero,passive_nopersist,3,OK,outputs_sweep50\passive_nopersist_zero_seed3\metrics.csv
+zero,passive_persist,3,OK,outputs_sweep50\passive_persist_zero_seed3\metrics.csv
+zero,active_persist,3,OK,outputs_sweep50\active_persist_zero_seed3\metrics.csv
+zero,active_random,3,OK,outputs_sweep50\active_random_zero_seed3\metrics.csv
+wrap,object_off_tracked,3,OK,outputs_sweep50\object_off_tracked_wrap_seed3\metrics.csv
+wrap,passive_nopersist,3,OK,outputs_sweep50\passive_nopersist_wrap_seed3\metrics.csv
+wrap,passive_persist,3,OK,outputs_sweep50\passive_persist_wrap_seed3\metrics.csv
+wrap,active_persist,3,OK,outputs_sweep50\active_persist_wrap_seed3\metrics.csv
+wrap,active_random,3,OK,outputs_sweep50\active_random_wrap_seed3\metrics.csv
+zero,object_off_tracked,4,OK,outputs_sweep50\object_off_tracked_zero_seed4\metrics.csv
+zero,passive_nopersist,4,OK,outputs_sweep50\passive_nopersist_zero_seed4\metrics.csv
+zero,passive_persist,4,OK,outputs_sweep50\passive_persist_zero_seed4\metrics.csv
+zero,active_persist,4,OK,outputs_sweep50\active_persist_zero_seed4\metrics.csv
+zero,active_random,4,OK,outputs_sweep50\active_random_zero_seed4\metrics.csv
+wrap,object_off_tracked,4,OK,outputs_sweep50\object_off_tracked_wrap_seed4\metrics.csv
+wrap,passive_nopersist,4,OK,outputs_sweep50\passive_nopersist_wrap_seed4\metrics.csv
+wrap,passive_persist,4,OK,outputs_sweep50\passive_persist_wrap_seed4\metrics.csv
+wrap,active_persist,4,OK,outputs_sweep50\active_persist_wrap_seed4\metrics.csv
+wrap,active_random,4,OK,outputs_sweep50\active_random_wrap_seed4\metrics.csv
+zero,object_off_tracked,5,OK,outputs_sweep50\object_off_tracked_zero_seed5\metrics.csv
+zero,passive_nopersist,5,OK,outputs_sweep50\passive_nopersist_zero_seed5\metrics.csv
+zero,passive_persist,5,OK,outputs_sweep50\passive_persist_zero_seed5\metrics.csv
+zero,active_persist,5,OK,outputs_sweep50\active_persist_zero_seed5\metrics.csv
+zero,active_random,5,OK,outputs_sweep50\active_random_zero_seed5\metrics.csv
+wrap,object_off_tracked,5,OK,outputs_sweep50\object_off_tracked_wrap_seed5\metrics.csv
+wrap,passive_nopersist,5,OK,outputs_sweep50\passive_nopersist_wrap_seed5\metrics.csv
+wrap,passive_persist,5,OK,outputs_sweep50\passive_persist_wrap_seed5\metrics.csv
+wrap,active_persist,5,OK,outputs_sweep50\active_persist_wrap_seed5\metrics.csv
+wrap,active_random,5,OK,outputs_sweep50\active_random_wrap_seed5\metrics.csv
+zero,object_off_tracked,6,OK,outputs_sweep50\object_off_tracked_zero_seed6\metrics.csv
+zero,passive_nopersist,6,OK,outputs_sweep50\passive_nopersist_zero_seed6\metrics.csv
+zero,passive_persist,6,OK,outputs_sweep50\passive_persist_zero_seed6\metrics.csv
+zero,active_persist,6,OK,outputs_sweep50\active_persist_zero_seed6\metrics.csv
+zero,active_random,6,OK,outputs_sweep50\active_random_zero_seed6\metrics.csv
+wrap,object_off_tracked,6,OK,outputs_sweep50\object_off_tracked_wrap_seed6\metrics.csv
+wrap,passive_nopersist,6,OK,outputs_sweep50\passive_nopersist_wrap_seed6\metrics.csv
+wrap,passive_persist,6,OK,outputs_sweep50\passive_persist_wrap_seed6\metrics.csv
+wrap,active_persist,6,OK,outputs_sweep50\active_persist_wrap_seed6\metrics.csv
+wrap,active_random,6,OK,outputs_sweep50\active_random_wrap_seed6\metrics.csv
+zero,object_off_tracked,7,OK,outputs_sweep50\object_off_tracked_zero_seed7\metrics.csv
+zero,passive_nopersist,7,OK,outputs_sweep50\passive_nopersist_zero_seed7\metrics.csv
+zero,passive_persist,7,OK,outputs_sweep50\passive_persist_zero_seed7\metrics.csv
+zero,active_persist,7,OK,outputs_sweep50\active_persist_zero_seed7\metrics.csv
+zero,active_random,7,OK,outputs_sweep50\active_random_zero_seed7\metrics.csv
+wrap,object_off_tracked,7,OK,outputs_sweep50\object_off_tracked_wrap_seed7\metrics.csv
+wrap,passive_nopersist,7,OK,outputs_sweep50\passive_nopersist_wrap_seed7\metrics.csv
+wrap,passive_persist,7,OK,outputs_sweep50\passive_persist_wrap_seed7\metrics.csv
+wrap,active_persist,7,OK,outputs_sweep50\active_persist_wrap_seed7\metrics.csv
+wrap,active_random,7,OK,outputs_sweep50\active_random_wrap_seed7\metrics.csv
+zero,object_off_tracked,8,OK,outputs_sweep50\object_off_tracked_zero_seed8\metrics.csv
+zero,passive_nopersist,8,OK,outputs_sweep50\passive_nopersist_zero_seed8\metrics.csv
+zero,passive_persist,8,OK,outputs_sweep50\passive_persist_zero_seed8\metrics.csv
+zero,active_persist,8,OK,outputs_sweep50\active_persist_zero_seed8\metrics.csv
+zero,active_random,8,OK,outputs_sweep50\active_random_zero_seed8\metrics.csv
+wrap,object_off_tracked,8,OK,outputs_sweep50\object_off_tracked_wrap_seed8\metrics.csv
+wrap,passive_nopersist,8,OK,outputs_sweep50\passive_nopersist_wrap_seed8\metrics.csv
+wrap,passive_persist,8,OK,outputs_sweep50\passive_persist_wrap_seed8\metrics.csv
+wrap,active_persist,8,OK,outputs_sweep50\active_persist_wrap_seed8\metrics.csv
+wrap,active_random,8,OK,outputs_sweep50\active_random_wrap_seed8\metrics.csv
+zero,object_off_tracked,9,OK,outputs_sweep50\object_off_tracked_zero_seed9\metrics.csv
+zero,passive_nopersist,9,OK,outputs_sweep50\passive_nopersist_zero_seed9\metrics.csv
+zero,passive_persist,9,OK,outputs_sweep50\passive_persist_zero_seed9\metrics.csv
+zero,active_persist,9,OK,outputs_sweep50\active_persist_zero_seed9\metrics.csv
+zero,active_random,9,OK,outputs_sweep50\active_random_zero_seed9\metrics.csv
+wrap,object_off_tracked,9,OK,outputs_sweep50\object_off_tracked_wrap_seed9\metrics.csv
+wrap,passive_nopersist,9,OK,outputs_sweep50\passive_nopersist_wrap_seed9\metrics.csv
+wrap,passive_persist,9,OK,outputs_sweep50\passive_persist_wrap_seed9\metrics.csv
+wrap,active_persist,9,OK,outputs_sweep50\active_persist_wrap_seed9\metrics.csv
+wrap,active_random,9,OK,outputs_sweep50\active_random_wrap_seed9\metrics.csv
+zero,object_off_tracked,10,OK,outputs_sweep50\object_off_tracked_zero_seed10\metrics.csv
+zero,passive_nopersist,10,OK,outputs_sweep50\passive_nopersist_zero_seed10\metrics.csv
+zero,passive_persist,10,OK,outputs_sweep50\passive_persist_zero_seed10\metrics.csv
+zero,active_persist,10,OK,outputs_sweep50\active_persist_zero_seed10\metrics.csv
+zero,active_random,10,OK,outputs_sweep50\active_random_zero_seed10\metrics.csv
+wrap,object_off_tracked,10,OK,outputs_sweep50\object_off_tracked_wrap_seed10\metrics.csv
+wrap,passive_nopersist,10,OK,outputs_sweep50\passive_nopersist_wrap_seed10\metrics.csv
+wrap,passive_persist,10,OK,outputs_sweep50\passive_persist_wrap_seed10\metrics.csv
+wrap,active_persist,10,OK,outputs_sweep50\active_persist_wrap_seed10\metrics.csv
+wrap,active_random,10,OK,outputs_sweep50\active_random_wrap_seed10\metrics.csv
+zero,object_off_tracked,11,OK,outputs_sweep50\object_off_tracked_zero_seed11\metrics.csv
+zero,passive_nopersist,11,OK,outputs_sweep50\passive_nopersist_zero_seed11\metrics.csv
+zero,passive_persist,11,OK,outputs_sweep50\passive_persist_zero_seed11\metrics.csv
+zero,active_persist,11,OK,outputs_sweep50\active_persist_zero_seed11\metrics.csv
+zero,active_random,11,OK,outputs_sweep50\active_random_zero_seed11\metrics.csv
+wrap,object_off_tracked,11,OK,outputs_sweep50\object_off_tracked_wrap_seed11\metrics.csv
+wrap,passive_nopersist,11,OK,outputs_sweep50\passive_nopersist_wrap_seed11\metrics.csv
+wrap,passive_persist,11,OK,outputs_sweep50\passive_persist_wrap_seed11\metrics.csv
+wrap,active_persist,11,OK,outputs_sweep50\active_persist_wrap_seed11\metrics.csv
+wrap,active_random,11,OK,outputs_sweep50\active_random_wrap_seed11\metrics.csv
+zero,object_off_tracked,12,OK,outputs_sweep50\object_off_tracked_zero_seed12\metrics.csv
+zero,passive_nopersist,12,OK,outputs_sweep50\passive_nopersist_zero_seed12\metrics.csv
+zero,passive_persist,12,OK,outputs_sweep50\passive_persist_zero_seed12\metrics.csv
+zero,active_persist,12,OK,outputs_sweep50\active_persist_zero_seed12\metrics.csv
+zero,active_random,12,OK,outputs_sweep50\active_random_zero_seed12\metrics.csv
+wrap,object_off_tracked,12,OK,outputs_sweep50\object_off_tracked_wrap_seed12\metrics.csv
+wrap,passive_nopersist,12,OK,outputs_sweep50\passive_nopersist_wrap_seed12\metrics.csv
+wrap,passive_persist,12,OK,outputs_sweep50\passive_persist_wrap_seed12\metrics.csv
+wrap,active_persist,12,OK,outputs_sweep50\active_persist_wrap_seed12\metrics.csv
+wrap,active_random,12,OK,outputs_sweep50\active_random_wrap_seed12\metrics.csv
+zero,object_off_tracked,13,OK,outputs_sweep50\object_off_tracked_zero_seed13\metrics.csv
+zero,passive_nopersist,13,OK,outputs_sweep50\passive_nopersist_zero_seed13\metrics.csv
+zero,passive_persist,13,OK,outputs_sweep50\passive_persist_zero_seed13\metrics.csv
+zero,active_persist,13,OK,outputs_sweep50\active_persist_zero_seed13\metrics.csv
+zero,active_random,13,OK,outputs_sweep50\active_random_zero_seed13\metrics.csv
+wrap,object_off_tracked,13,OK,outputs_sweep50\object_off_tracked_wrap_seed13\metrics.csv
+wrap,passive_nopersist,13,OK,outputs_sweep50\passive_nopersist_wrap_seed13\metrics.csv
+wrap,passive_persist,13,OK,outputs_sweep50\passive_persist_wrap_seed13\metrics.csv
+wrap,active_persist,13,OK,outputs_sweep50\active_persist_wrap_seed13\metrics.csv
+wrap,active_random,13,OK,outputs_sweep50\active_random_wrap_seed13\metrics.csv
+zero,object_off_tracked,14,OK,outputs_sweep50\object_off_tracked_zero_seed14\metrics.csv
+zero,passive_nopersist,14,OK,outputs_sweep50\passive_nopersist_zero_seed14\metrics.csv
+zero,passive_persist,14,OK,outputs_sweep50\passive_persist_zero_seed14\metrics.csv
+zero,active_persist,14,OK,outputs_sweep50\active_persist_zero_seed14\metrics.csv
+zero,active_random,14,OK,outputs_sweep50\active_random_zero_seed14\metrics.csv
+wrap,object_off_tracked,14,OK,outputs_sweep50\object_off_tracked_wrap_seed14\metrics.csv
+wrap,passive_nopersist,14,OK,outputs_sweep50\passive_nopersist_wrap_seed14\metrics.csv
+wrap,passive_persist,14,OK,outputs_sweep50\passive_persist_wrap_seed14\metrics.csv
+wrap,active_persist,14,OK,outputs_sweep50\active_persist_wrap_seed14\metrics.csv
+wrap,active_random,14,OK,outputs_sweep50\active_random_wrap_seed14\metrics.csv
+zero,object_off_tracked,15,OK,outputs_sweep50\object_off_tracked_zero_seed15\metrics.csv
+zero,passive_nopersist,15,OK,outputs_sweep50\passive_nopersist_zero_seed15\metrics.csv
+zero,passive_persist,15,OK,outputs_sweep50\passive_persist_zero_seed15\metrics.csv
+zero,active_persist,15,OK,outputs_sweep50\active_persist_zero_seed15\metrics.csv
+zero,active_random,15,OK,outputs_sweep50\active_random_zero_seed15\metrics.csv
+wrap,object_off_tracked,15,OK,outputs_sweep50\object_off_tracked_wrap_seed15\metrics.csv
+wrap,passive_nopersist,15,OK,outputs_sweep50\passive_nopersist_wrap_seed15\metrics.csv
+wrap,passive_persist,15,OK,outputs_sweep50\passive_persist_wrap_seed15\metrics.csv
+wrap,active_persist,15,OK,outputs_sweep50\active_persist_wrap_seed15\metrics.csv
+wrap,active_random,15,OK,outputs_sweep50\active_random_wrap_seed15\metrics.csv
+zero,object_off_tracked,16,OK,outputs_sweep50\object_off_tracked_zero_seed16\metrics.csv
+zero,passive_nopersist,16,OK,outputs_sweep50\passive_nopersist_zero_seed16\metrics.csv
+zero,passive_persist,16,OK,outputs_sweep50\passive_persist_zero_seed16\metrics.csv
+zero,active_persist,16,OK,outputs_sweep50\active_persist_zero_seed16\metrics.csv
+zero,active_random,16,OK,outputs_sweep50\active_random_zero_seed16\metrics.csv
+wrap,object_off_tracked,16,OK,outputs_sweep50\object_off_tracked_wrap_seed16\metrics.csv
+wrap,passive_nopersist,16,OK,outputs_sweep50\passive_nopersist_wrap_seed16\metrics.csv
+wrap,passive_persist,16,OK,outputs_sweep50\passive_persist_wrap_seed16\metrics.csv
+wrap,active_persist,16,OK,outputs_sweep50\active_persist_wrap_seed16\metrics.csv
+wrap,active_random,16,OK,outputs_sweep50\active_random_wrap_seed16\metrics.csv
+zero,object_off_tracked,17,OK,outputs_sweep50\object_off_tracked_zero_seed17\metrics.csv
+zero,passive_nopersist,17,OK,outputs_sweep50\passive_nopersist_zero_seed17\metrics.csv
+zero,passive_persist,17,OK,outputs_sweep50\passive_persist_zero_seed17\metrics.csv
+zero,active_persist,17,OK,outputs_sweep50\active_persist_zero_seed17\metrics.csv
+zero,active_random,17,OK,outputs_sweep50\active_random_zero_seed17\metrics.csv
+wrap,object_off_tracked,17,OK,outputs_sweep50\object_off_tracked_wrap_seed17\metrics.csv
+wrap,passive_nopersist,17,OK,outputs_sweep50\passive_nopersist_wrap_seed17\metrics.csv
+wrap,passive_persist,17,OK,outputs_sweep50\passive_persist_wrap_seed17\metrics.csv
+wrap,active_persist,17,OK,outputs_sweep50\active_persist_wrap_seed17\metrics.csv
+wrap,active_random,17,OK,outputs_sweep50\active_random_wrap_seed17\metrics.csv
+zero,object_off_tracked,18,OK,outputs_sweep50\object_off_tracked_zero_seed18\metrics.csv
+zero,passive_nopersist,18,OK,outputs_sweep50\passive_nopersist_zero_seed18\metrics.csv
+zero,passive_persist,18,OK,outputs_sweep50\passive_persist_zero_seed18\metrics.csv
+zero,active_persist,18,OK,outputs_sweep50\active_persist_zero_seed18\metrics.csv
+zero,active_random,18,OK,outputs_sweep50\active_random_zero_seed18\metrics.csv
+wrap,object_off_tracked,18,OK,outputs_sweep50\object_off_tracked_wrap_seed18\metrics.csv
+wrap,passive_nopersist,18,OK,outputs_sweep50\passive_nopersist_wrap_seed18\metrics.csv
+wrap,passive_persist,18,OK,outputs_sweep50\passive_persist_wrap_seed18\metrics.csv
+wrap,active_persist,18,OK,outputs_sweep50\active_persist_wrap_seed18\metrics.csv
+wrap,active_random,18,OK,outputs_sweep50\active_random_wrap_seed18\metrics.csv
+zero,object_off_tracked,19,OK,outputs_sweep50\object_off_tracked_zero_seed19\metrics.csv
+zero,passive_nopersist,19,OK,outputs_sweep50\passive_nopersist_zero_seed19\metrics.csv
+zero,passive_persist,19,OK,outputs_sweep50\passive_persist_zero_seed19\metrics.csv
+zero,active_persist,19,OK,outputs_sweep50\active_persist_zero_seed19\metrics.csv
+zero,active_random,19,OK,outputs_sweep50\active_random_zero_seed19\metrics.csv
+wrap,object_off_tracked,19,OK,outputs_sweep50\object_off_tracked_wrap_seed19\metrics.csv
+wrap,passive_nopersist,19,OK,outputs_sweep50\passive_nopersist_wrap_seed19\metrics.csv
+wrap,passive_persist,19,OK,outputs_sweep50\passive_persist_wrap_seed19\metrics.csv
+wrap,active_persist,19,OK,outputs_sweep50\active_persist_wrap_seed19\metrics.csv
+wrap,active_random,19,OK,outputs_sweep50\active_random_wrap_seed19\metrics.csv
+zero,object_off_tracked,20,OK,outputs_sweep50\object_off_tracked_zero_seed20\metrics.csv
+zero,passive_nopersist,20,OK,outputs_sweep50\passive_nopersist_zero_seed20\metrics.csv
+zero,passive_persist,20,OK,outputs_sweep50\passive_persist_zero_seed20\metrics.csv
+zero,active_persist,20,OK,outputs_sweep50\active_persist_zero_seed20\metrics.csv
+zero,active_random,20,OK,outputs_sweep50\active_random_zero_seed20\metrics.csv
+wrap,object_off_tracked,20,OK,outputs_sweep50\object_off_tracked_wrap_seed20\metrics.csv
+wrap,passive_nopersist,20,OK,outputs_sweep50\passive_nopersist_wrap_seed20\metrics.csv
+wrap,passive_persist,20,OK,outputs_sweep50\passive_persist_wrap_seed20\metrics.csv
+wrap,active_persist,20,OK,outputs_sweep50\active_persist_wrap_seed20\metrics.csv
+wrap,active_random,20,OK,outputs_sweep50\active_random_wrap_seed20\metrics.csv
+zero,object_off_tracked,21,OK,outputs_sweep50\object_off_tracked_zero_seed21\metrics.csv
+zero,passive_nopersist,21,OK,outputs_sweep50\passive_nopersist_zero_seed21\metrics.csv
+zero,passive_persist,21,OK,outputs_sweep50\passive_persist_zero_seed21\metrics.csv
+zero,active_persist,21,OK,outputs_sweep50\active_persist_zero_seed21\metrics.csv
+zero,active_random,21,OK,outputs_sweep50\active_random_zero_seed21\metrics.csv
+wrap,object_off_tracked,21,OK,outputs_sweep50\object_off_tracked_wrap_seed21\metrics.csv
+wrap,passive_nopersist,21,OK,outputs_sweep50\passive_nopersist_wrap_seed21\metrics.csv
+wrap,passive_persist,21,OK,outputs_sweep50\passive_persist_wrap_seed21\metrics.csv
+wrap,active_persist,21,OK,outputs_sweep50\active_persist_wrap_seed21\metrics.csv
+wrap,active_random,21,OK,outputs_sweep50\active_random_wrap_seed21\metrics.csv
+zero,object_off_tracked,22,OK,outputs_sweep50\object_off_tracked_zero_seed22\metrics.csv
+zero,passive_nopersist,22,OK,outputs_sweep50\passive_nopersist_zero_seed22\metrics.csv
+zero,passive_persist,22,OK,outputs_sweep50\passive_persist_zero_seed22\metrics.csv
+zero,active_persist,22,OK,outputs_sweep50\active_persist_zero_seed22\metrics.csv
+zero,active_random,22,OK,outputs_sweep50\active_random_zero_seed22\metrics.csv
+wrap,object_off_tracked,22,OK,outputs_sweep50\object_off_tracked_wrap_seed22\metrics.csv
+wrap,passive_nopersist,22,OK,outputs_sweep50\passive_nopersist_wrap_seed22\metrics.csv
+wrap,passive_persist,22,OK,outputs_sweep50\passive_persist_wrap_seed22\metrics.csv
+wrap,active_persist,22,OK,outputs_sweep50\active_persist_wrap_seed22\metrics.csv
+wrap,active_random,22,OK,outputs_sweep50\active_random_wrap_seed22\metrics.csv
+zero,object_off_tracked,23,OK,outputs_sweep50\object_off_tracked_zero_seed23\metrics.csv
+zero,passive_nopersist,23,OK,outputs_sweep50\passive_nopersist_zero_seed23\metrics.csv
+zero,passive_persist,23,OK,outputs_sweep50\passive_persist_zero_seed23\metrics.csv
+zero,active_persist,23,OK,outputs_sweep50\active_persist_zero_seed23\metrics.csv
+zero,active_random,23,OK,outputs_sweep50\active_random_zero_seed23\metrics.csv
+wrap,object_off_tracked,23,OK,outputs_sweep50\object_off_tracked_wrap_seed23\metrics.csv
+wrap,passive_nopersist,23,OK,outputs_sweep50\passive_nopersist_wrap_seed23\metrics.csv
+wrap,passive_persist,23,OK,outputs_sweep50\passive_persist_wrap_seed23\metrics.csv
+wrap,active_persist,23,OK,outputs_sweep50\active_persist_wrap_seed23\metrics.csv
+wrap,active_random,23,OK,outputs_sweep50\active_random_wrap_seed23\metrics.csv
+zero,object_off_tracked,24,OK,outputs_sweep50\object_off_tracked_zero_seed24\metrics.csv
+zero,passive_nopersist,24,OK,outputs_sweep50\passive_nopersist_zero_seed24\metrics.csv
+zero,passive_persist,24,OK,outputs_sweep50\passive_persist_zero_seed24\metrics.csv
+zero,active_persist,24,OK,outputs_sweep50\active_persist_zero_seed24\metrics.csv
+zero,active_random,24,OK,outputs_sweep50\active_random_zero_seed24\metrics.csv
+wrap,object_off_tracked,24,OK,outputs_sweep50\object_off_tracked_wrap_seed24\metrics.csv
+wrap,passive_nopersist,24,OK,outputs_sweep50\passive_nopersist_wrap_seed24\metrics.csv
+wrap,passive_persist,24,OK,outputs_sweep50\passive_persist_wrap_seed24\metrics.csv
+wrap,active_persist,24,OK,outputs_sweep50\active_persist_wrap_seed24\metrics.csv
+wrap,active_random,24,OK,outputs_sweep50\active_random_wrap_seed24\metrics.csv
+zero,object_off_tracked,25,OK,outputs_sweep50\object_off_tracked_zero_seed25\metrics.csv
+zero,passive_nopersist,25,OK,outputs_sweep50\passive_nopersist_zero_seed25\metrics.csv
+zero,passive_persist,25,OK,outputs_sweep50\passive_persist_zero_seed25\metrics.csv
+zero,active_persist,25,OK,outputs_sweep50\active_persist_zero_seed25\metrics.csv
+zero,active_random,25,OK,outputs_sweep50\active_random_zero_seed25\metrics.csv
+wrap,object_off_tracked,25,OK,outputs_sweep50\object_off_tracked_wrap_seed25\metrics.csv
+wrap,passive_nopersist,25,OK,outputs_sweep50\passive_nopersist_wrap_seed25\metrics.csv
+wrap,passive_persist,25,OK,outputs_sweep50\passive_persist_wrap_seed25\metrics.csv
+wrap,active_persist,25,OK,outputs_sweep50\active_persist_wrap_seed25\metrics.csv
+wrap,active_random,25,OK,outputs_sweep50\active_random_wrap_seed25\metrics.csv
+zero,object_off_tracked,26,OK,outputs_sweep50\object_off_tracked_zero_seed26\metrics.csv
+zero,passive_nopersist,26,OK,outputs_sweep50\passive_nopersist_zero_seed26\metrics.csv
+zero,passive_persist,26,OK,outputs_sweep50\passive_persist_zero_seed26\metrics.csv
+zero,active_persist,26,OK,outputs_sweep50\active_persist_zero_seed26\metrics.csv
+zero,active_random,26,OK,outputs_sweep50\active_random_zero_seed26\metrics.csv
+wrap,object_off_tracked,26,OK,outputs_sweep50\object_off_tracked_wrap_seed26\metrics.csv
+wrap,passive_nopersist,26,OK,outputs_sweep50\passive_nopersist_wrap_seed26\metrics.csv
+wrap,passive_persist,26,OK,outputs_sweep50\passive_persist_wrap_seed26\metrics.csv
+wrap,active_persist,26,OK,outputs_sweep50\active_persist_wrap_seed26\metrics.csv
+wrap,active_random,26,OK,outputs_sweep50\active_random_wrap_seed26\metrics.csv
+zero,object_off_tracked,27,OK,outputs_sweep50\object_off_tracked_zero_seed27\metrics.csv
+zero,passive_nopersist,27,OK,outputs_sweep50\passive_nopersist_zero_seed27\metrics.csv
+zero,passive_persist,27,OK,outputs_sweep50\passive_persist_zero_seed27\metrics.csv
+zero,active_persist,27,OK,outputs_sweep50\active_persist_zero_seed27\metrics.csv
+zero,active_random,27,OK,outputs_sweep50\active_random_zero_seed27\metrics.csv
+wrap,object_off_tracked,27,OK,outputs_sweep50\object_off_tracked_wrap_seed27\metrics.csv
+wrap,passive_nopersist,27,OK,outputs_sweep50\passive_nopersist_wrap_seed27\metrics.csv
+wrap,passive_persist,27,OK,outputs_sweep50\passive_persist_wrap_seed27\metrics.csv
+wrap,active_persist,27,OK,outputs_sweep50\active_persist_wrap_seed27\metrics.csv
+wrap,active_random,27,OK,outputs_sweep50\active_random_wrap_seed27\metrics.csv
+zero,object_off_tracked,28,OK,outputs_sweep50\object_off_tracked_zero_seed28\metrics.csv
+zero,passive_nopersist,28,OK,outputs_sweep50\passive_nopersist_zero_seed28\metrics.csv
+zero,passive_persist,28,OK,outputs_sweep50\passive_persist_zero_seed28\metrics.csv
+zero,active_persist,28,OK,outputs_sweep50\active_persist_zero_seed28\metrics.csv
+zero,active_random,28,OK,outputs_sweep50\active_random_zero_seed28\metrics.csv
+wrap,object_off_tracked,28,OK,outputs_sweep50\object_off_tracked_wrap_seed28\metrics.csv
+wrap,passive_nopersist,28,OK,outputs_sweep50\passive_nopersist_wrap_seed28\metrics.csv
+wrap,passive_persist,28,OK,outputs_sweep50\passive_persist_wrap_seed28\metrics.csv
+wrap,active_persist,28,OK,outputs_sweep50\active_persist_wrap_seed28\metrics.csv
+wrap,active_random,28,OK,outputs_sweep50\active_random_wrap_seed28\metrics.csv
+zero,object_off_tracked,29,OK,outputs_sweep50\object_off_tracked_zero_seed29\metrics.csv
+zero,passive_nopersist,29,OK,outputs_sweep50\passive_nopersist_zero_seed29\metrics.csv
+zero,passive_persist,29,OK,outputs_sweep50\passive_persist_zero_seed29\metrics.csv
+zero,active_persist,29,OK,outputs_sweep50\active_persist_zero_seed29\metrics.csv
+zero,active_random,29,OK,outputs_sweep50\active_random_zero_seed29\metrics.csv
+wrap,object_off_tracked,29,OK,outputs_sweep50\object_off_tracked_wrap_seed29\metrics.csv
+wrap,passive_nopersist,29,OK,outputs_sweep50\passive_nopersist_wrap_seed29\metrics.csv
+wrap,passive_persist,29,OK,outputs_sweep50\passive_persist_wrap_seed29\metrics.csv
+wrap,active_persist,29,OK,outputs_sweep50\active_persist_wrap_seed29\metrics.csv
+wrap,active_random,29,OK,outputs_sweep50\active_random_wrap_seed29\metrics.csv
+zero,object_off_tracked,30,OK,outputs_sweep50\object_off_tracked_zero_seed30\metrics.csv
+zero,passive_nopersist,30,OK,outputs_sweep50\passive_nopersist_zero_seed30\metrics.csv
+zero,passive_persist,30,OK,outputs_sweep50\passive_persist_zero_seed30\metrics.csv
+zero,active_persist,30,OK,outputs_sweep50\active_persist_zero_seed30\metrics.csv
+zero,active_random,30,OK,outputs_sweep50\active_random_zero_seed30\metrics.csv
+wrap,object_off_tracked,30,OK,outputs_sweep50\object_off_tracked_wrap_seed30\metrics.csv
+wrap,passive_nopersist,30,OK,outputs_sweep50\passive_nopersist_wrap_seed30\metrics.csv
+wrap,passive_persist,30,OK,outputs_sweep50\passive_persist_wrap_seed30\metrics.csv
+wrap,active_persist,30,OK,outputs_sweep50\active_persist_wrap_seed30\metrics.csv
+wrap,active_random,30,OK,outputs_sweep50\active_random_wrap_seed30\metrics.csv
+zero,object_off_tracked,31,OK,outputs_sweep50\object_off_tracked_zero_seed31\metrics.csv
+zero,passive_nopersist,31,OK,outputs_sweep50\passive_nopersist_zero_seed31\metrics.csv
+zero,passive_persist,31,OK,outputs_sweep50\passive_persist_zero_seed31\metrics.csv
+zero,active_persist,31,OK,outputs_sweep50\active_persist_zero_seed31\metrics.csv
+zero,active_random,31,OK,outputs_sweep50\active_random_zero_seed31\metrics.csv
+wrap,object_off_tracked,31,OK,outputs_sweep50\object_off_tracked_wrap_seed31\metrics.csv
+wrap,passive_nopersist,31,OK,outputs_sweep50\passive_nopersist_wrap_seed31\metrics.csv
+wrap,passive_persist,31,OK,outputs_sweep50\passive_persist_wrap_seed31\metrics.csv
+wrap,active_persist,31,OK,outputs_sweep50\active_persist_wrap_seed31\metrics.csv
+wrap,active_random,31,OK,outputs_sweep50\active_random_wrap_seed31\metrics.csv
+zero,object_off_tracked,32,OK,outputs_sweep50\object_off_tracked_zero_seed32\metrics.csv
+zero,passive_nopersist,32,OK,outputs_sweep50\passive_nopersist_zero_seed32\metrics.csv
+zero,passive_persist,32,OK,outputs_sweep50\passive_persist_zero_seed32\metrics.csv
+zero,active_persist,32,OK,outputs_sweep50\active_persist_zero_seed32\metrics.csv
+zero,active_random,32,OK,outputs_sweep50\active_random_zero_seed32\metrics.csv
+wrap,object_off_tracked,32,OK,outputs_sweep50\object_off_tracked_wrap_seed32\metrics.csv
+wrap,passive_nopersist,32,OK,outputs_sweep50\passive_nopersist_wrap_seed32\metrics.csv
+wrap,passive_persist,32,OK,outputs_sweep50\passive_persist_wrap_seed32\metrics.csv
+wrap,active_persist,32,OK,outputs_sweep50\active_persist_wrap_seed32\metrics.csv
+wrap,active_random,32,OK,outputs_sweep50\active_random_wrap_seed32\metrics.csv
+zero,object_off_tracked,33,OK,outputs_sweep50\object_off_tracked_zero_seed33\metrics.csv
+zero,passive_nopersist,33,OK,outputs_sweep50\passive_nopersist_zero_seed33\metrics.csv
+zero,passive_persist,33,OK,outputs_sweep50\passive_persist_zero_seed33\metrics.csv
+zero,active_persist,33,OK,outputs_sweep50\active_persist_zero_seed33\metrics.csv
+zero,active_random,33,OK,outputs_sweep50\active_random_zero_seed33\metrics.csv
+wrap,object_off_tracked,33,OK,outputs_sweep50\object_off_tracked_wrap_seed33\metrics.csv
+wrap,passive_nopersist,33,OK,outputs_sweep50\passive_nopersist_wrap_seed33\metrics.csv
+wrap,passive_persist,33,OK,outputs_sweep50\passive_persist_wrap_seed33\metrics.csv
+wrap,active_persist,33,OK,outputs_sweep50\active_persist_wrap_seed33\metrics.csv
+wrap,active_random,33,OK,outputs_sweep50\active_random_wrap_seed33\metrics.csv
+zero,object_off_tracked,34,OK,outputs_sweep50\object_off_tracked_zero_seed34\metrics.csv
+zero,passive_nopersist,34,OK,outputs_sweep50\passive_nopersist_zero_seed34\metrics.csv
+zero,passive_persist,34,OK,outputs_sweep50\passive_persist_zero_seed34\metrics.csv
+zero,active_persist,34,OK,outputs_sweep50\active_persist_zero_seed34\metrics.csv
+zero,active_random,34,OK,outputs_sweep50\active_random_zero_seed34\metrics.csv
+wrap,object_off_tracked,34,OK,outputs_sweep50\object_off_tracked_wrap_seed34\metrics.csv
+wrap,passive_nopersist,34,OK,outputs_sweep50\passive_nopersist_wrap_seed34\metrics.csv
+wrap,passive_persist,34,OK,outputs_sweep50\passive_persist_wrap_seed34\metrics.csv
+wrap,active_persist,34,OK,outputs_sweep50\active_persist_wrap_seed34\metrics.csv
+wrap,active_random,34,OK,outputs_sweep50\active_random_wrap_seed34\metrics.csv
+zero,object_off_tracked,35,OK,outputs_sweep50\object_off_tracked_zero_seed35\metrics.csv
+zero,passive_nopersist,35,OK,outputs_sweep50\passive_nopersist_zero_seed35\metrics.csv
+zero,passive_persist,35,OK,outputs_sweep50\passive_persist_zero_seed35\metrics.csv
+zero,active_persist,35,OK,outputs_sweep50\active_persist_zero_seed35\metrics.csv
+zero,active_random,35,OK,outputs_sweep50\active_random_zero_seed35\metrics.csv
+wrap,object_off_tracked,35,OK,outputs_sweep50\object_off_tracked_wrap_seed35\metrics.csv
+wrap,passive_nopersist,35,OK,outputs_sweep50\passive_nopersist_wrap_seed35\metrics.csv
+wrap,passive_persist,35,OK,outputs_sweep50\passive_persist_wrap_seed35\metrics.csv
+wrap,active_persist,35,OK,outputs_sweep50\active_persist_wrap_seed35\metrics.csv
+wrap,active_random,35,OK,outputs_sweep50\active_random_wrap_seed35\metrics.csv
+zero,object_off_tracked,36,OK,outputs_sweep50\object_off_tracked_zero_seed36\metrics.csv
+zero,passive_nopersist,36,OK,outputs_sweep50\passive_nopersist_zero_seed36\metrics.csv
+zero,passive_persist,36,OK,outputs_sweep50\passive_persist_zero_seed36\metrics.csv
+zero,active_persist,36,OK,outputs_sweep50\active_persist_zero_seed36\metrics.csv
+zero,active_random,36,OK,outputs_sweep50\active_random_zero_seed36\metrics.csv
+wrap,object_off_tracked,36,OK,outputs_sweep50\object_off_tracked_wrap_seed36\metrics.csv
+wrap,passive_nopersist,36,OK,outputs_sweep50\passive_nopersist_wrap_seed36\metrics.csv
+wrap,passive_persist,36,OK,outputs_sweep50\passive_persist_wrap_seed36\metrics.csv
+wrap,active_persist,36,OK,outputs_sweep50\active_persist_wrap_seed36\metrics.csv
+wrap,active_random,36,OK,outputs_sweep50\active_random_wrap_seed36\metrics.csv
+zero,object_off_tracked,37,OK,outputs_sweep50\object_off_tracked_zero_seed37\metrics.csv
+zero,passive_nopersist,37,OK,outputs_sweep50\passive_nopersist_zero_seed37\metrics.csv
+zero,passive_persist,37,OK,outputs_sweep50\passive_persist_zero_seed37\metrics.csv
+zero,active_persist,37,OK,outputs_sweep50\active_persist_zero_seed37\metrics.csv
+zero,active_random,37,OK,outputs_sweep50\active_random_zero_seed37\metrics.csv
+wrap,object_off_tracked,37,OK,outputs_sweep50\object_off_tracked_wrap_seed37\metrics.csv
+wrap,passive_nopersist,37,OK,outputs_sweep50\passive_nopersist_wrap_seed37\metrics.csv
+wrap,passive_persist,37,OK,outputs_sweep50\passive_persist_wrap_seed37\metrics.csv
+wrap,active_persist,37,OK,outputs_sweep50\active_persist_wrap_seed37\metrics.csv
+wrap,active_random,37,OK,outputs_sweep50\active_random_wrap_seed37\metrics.csv
+zero,object_off_tracked,38,OK,outputs_sweep50\object_off_tracked_zero_seed38\metrics.csv
+zero,passive_nopersist,38,OK,outputs_sweep50\passive_nopersist_zero_seed38\metrics.csv
+zero,passive_persist,38,OK,outputs_sweep50\passive_persist_zero_seed38\metrics.csv
+zero,active_persist,38,OK,outputs_sweep50\active_persist_zero_seed38\metrics.csv
+zero,active_random,38,OK,outputs_sweep50\active_random_zero_seed38\metrics.csv
+wrap,object_off_tracked,38,OK,outputs_sweep50\object_off_tracked_wrap_seed38\metrics.csv
+wrap,passive_nopersist,38,OK,outputs_sweep50\passive_nopersist_wrap_seed38\metrics.csv
+wrap,passive_persist,38,OK,outputs_sweep50\passive_persist_wrap_seed38\metrics.csv
+wrap,active_persist,38,OK,outputs_sweep50\active_persist_wrap_seed38\metrics.csv
+wrap,active_random,38,OK,outputs_sweep50\active_random_wrap_seed38\metrics.csv
+zero,object_off_tracked,39,OK,outputs_sweep50\object_off_tracked_zero_seed39\metrics.csv
+zero,passive_nopersist,39,OK,outputs_sweep50\passive_nopersist_zero_seed39\metrics.csv
+zero,passive_persist,39,OK,outputs_sweep50\passive_persist_zero_seed39\metrics.csv
+zero,active_persist,39,OK,outputs_sweep50\active_persist_zero_seed39\metrics.csv
+zero,active_random,39,OK,outputs_sweep50\active_random_zero_seed39\metrics.csv
+wrap,object_off_tracked,39,OK,outputs_sweep50\object_off_tracked_wrap_seed39\metrics.csv
+wrap,passive_nopersist,39,OK,outputs_sweep50\passive_nopersist_wrap_seed39\metrics.csv
+wrap,passive_persist,39,OK,outputs_sweep50\passive_persist_wrap_seed39\metrics.csv
+wrap,active_persist,39,OK,outputs_sweep50\active_persist_wrap_seed39\metrics.csv
+wrap,active_random,39,OK,outputs_sweep50\active_random_wrap_seed39\metrics.csv
+zero,object_off_tracked,40,OK,outputs_sweep50\object_off_tracked_zero_seed40\metrics.csv
+zero,passive_nopersist,40,OK,outputs_sweep50\passive_nopersist_zero_seed40\metrics.csv
+zero,passive_persist,40,OK,outputs_sweep50\passive_persist_zero_seed40\metrics.csv
+zero,active_persist,40,OK,outputs_sweep50\active_persist_zero_seed40\metrics.csv
+zero,active_random,40,OK,outputs_sweep50\active_random_zero_seed40\metrics.csv
+wrap,object_off_tracked,40,OK,outputs_sweep50\object_off_tracked_wrap_seed40\metrics.csv
+wrap,passive_nopersist,40,OK,outputs_sweep50\passive_nopersist_wrap_seed40\metrics.csv
+wrap,passive_persist,40,OK,outputs_sweep50\passive_persist_wrap_seed40\metrics.csv
+wrap,active_persist,40,OK,outputs_sweep50\active_persist_wrap_seed40\metrics.csv
+wrap,active_random,40,OK,outputs_sweep50\active_random_wrap_seed40\metrics.csv
+zero,object_off_tracked,41,OK,outputs_sweep50\object_off_tracked_zero_seed41\metrics.csv
+zero,passive_nopersist,41,OK,outputs_sweep50\passive_nopersist_zero_seed41\metrics.csv
+zero,passive_persist,41,OK,outputs_sweep50\passive_persist_zero_seed41\metrics.csv
+zero,active_persist,41,OK,outputs_sweep50\active_persist_zero_seed41\metrics.csv
+zero,active_random,41,OK,outputs_sweep50\active_random_zero_seed41\metrics.csv
+wrap,object_off_tracked,41,OK,outputs_sweep50\object_off_tracked_wrap_seed41\metrics.csv
+wrap,passive_nopersist,41,OK,outputs_sweep50\passive_nopersist_wrap_seed41\metrics.csv
+wrap,passive_persist,41,OK,outputs_sweep50\passive_persist_wrap_seed41\metrics.csv
+wrap,active_persist,41,OK,outputs_sweep50\active_persist_wrap_seed41\metrics.csv
+wrap,active_random,41,OK,outputs_sweep50\active_random_wrap_seed41\metrics.csv
+zero,object_off_tracked,42,OK,outputs_sweep50\object_off_tracked_zero_seed42\metrics.csv
+zero,passive_nopersist,42,OK,outputs_sweep50\passive_nopersist_zero_seed42\metrics.csv
+zero,passive_persist,42,OK,outputs_sweep50\passive_persist_zero_seed42\metrics.csv
+zero,active_persist,42,OK,outputs_sweep50\active_persist_zero_seed42\metrics.csv
+zero,active_random,42,OK,outputs_sweep50\active_random_zero_seed42\metrics.csv
+wrap,object_off_tracked,42,OK,outputs_sweep50\object_off_tracked_wrap_seed42\metrics.csv
+wrap,passive_nopersist,42,OK,outputs_sweep50\passive_nopersist_wrap_seed42\metrics.csv
+wrap,passive_persist,42,OK,outputs_sweep50\passive_persist_wrap_seed42\metrics.csv
+wrap,active_persist,42,OK,outputs_sweep50\active_persist_wrap_seed42\metrics.csv
+wrap,active_random,42,OK,outputs_sweep50\active_random_wrap_seed42\metrics.csv
+zero,object_off_tracked,43,OK,outputs_sweep50\object_off_tracked_zero_seed43\metrics.csv
+zero,passive_nopersist,43,OK,outputs_sweep50\passive_nopersist_zero_seed43\metrics.csv
+zero,passive_persist,43,OK,outputs_sweep50\passive_persist_zero_seed43\metrics.csv
+zero,active_persist,43,OK,outputs_sweep50\active_persist_zero_seed43\metrics.csv
+zero,active_random,43,OK,outputs_sweep50\active_random_zero_seed43\metrics.csv
+wrap,object_off_tracked,43,OK,outputs_sweep50\object_off_tracked_wrap_seed43\metrics.csv
+wrap,passive_nopersist,43,OK,outputs_sweep50\passive_nopersist_wrap_seed43\metrics.csv
+wrap,passive_persist,43,OK,outputs_sweep50\passive_persist_wrap_seed43\metrics.csv
+wrap,active_persist,43,OK,outputs_sweep50\active_persist_wrap_seed43\metrics.csv
+wrap,active_random,43,OK,outputs_sweep50\active_random_wrap_seed43\metrics.csv
+zero,object_off_tracked,44,OK,outputs_sweep50\object_off_tracked_zero_seed44\metrics.csv
+zero,passive_nopersist,44,OK,outputs_sweep50\passive_nopersist_zero_seed44\metrics.csv
+zero,passive_persist,44,OK,outputs_sweep50\passive_persist_zero_seed44\metrics.csv
+zero,active_persist,44,OK,outputs_sweep50\active_persist_zero_seed44\metrics.csv
+zero,active_random,44,OK,outputs_sweep50\active_random_zero_seed44\metrics.csv
+wrap,object_off_tracked,44,OK,outputs_sweep50\object_off_tracked_wrap_seed44\metrics.csv
+wrap,passive_nopersist,44,OK,outputs_sweep50\passive_nopersist_wrap_seed44\metrics.csv
+wrap,passive_persist,44,OK,outputs_sweep50\passive_persist_wrap_seed44\metrics.csv
+wrap,active_persist,44,OK,outputs_sweep50\active_persist_wrap_seed44\metrics.csv
+wrap,active_random,44,OK,outputs_sweep50\active_random_wrap_seed44\metrics.csv
+zero,object_off_tracked,45,OK,outputs_sweep50\object_off_tracked_zero_seed45\metrics.csv
+zero,passive_nopersist,45,OK,outputs_sweep50\passive_nopersist_zero_seed45\metrics.csv
+zero,passive_persist,45,OK,outputs_sweep50\passive_persist_zero_seed45\metrics.csv
+zero,active_persist,45,OK,outputs_sweep50\active_persist_zero_seed45\metrics.csv
+zero,active_random,45,OK,outputs_sweep50\active_random_zero_seed45\metrics.csv
+wrap,object_off_tracked,45,OK,outputs_sweep50\object_off_tracked_wrap_seed45\metrics.csv
+wrap,passive_nopersist,45,OK,outputs_sweep50\passive_nopersist_wrap_seed45\metrics.csv
+wrap,passive_persist,45,OK,outputs_sweep50\passive_persist_wrap_seed45\metrics.csv
+wrap,active_persist,45,OK,outputs_sweep50\active_persist_wrap_seed45\metrics.csv
+wrap,active_random,45,OK,outputs_sweep50\active_random_wrap_seed45\metrics.csv
+zero,object_off_tracked,46,OK,outputs_sweep50\object_off_tracked_zero_seed46\metrics.csv
+zero,passive_nopersist,46,OK,outputs_sweep50\passive_nopersist_zero_seed46\metrics.csv
+zero,passive_persist,46,OK,outputs_sweep50\passive_persist_zero_seed46\metrics.csv
+zero,active_persist,46,OK,outputs_sweep50\active_persist_zero_seed46\metrics.csv
+zero,active_random,46,OK,outputs_sweep50\active_random_zero_seed46\metrics.csv
+wrap,object_off_tracked,46,OK,outputs_sweep50\object_off_tracked_wrap_seed46\metrics.csv
+wrap,passive_nopersist,46,OK,outputs_sweep50\passive_nopersist_wrap_seed46\metrics.csv
+wrap,passive_persist,46,OK,outputs_sweep50\passive_persist_wrap_seed46\metrics.csv
+wrap,active_persist,46,OK,outputs_sweep50\active_persist_wrap_seed46\metrics.csv
+wrap,active_random,46,OK,outputs_sweep50\active_random_wrap_seed46\metrics.csv
+zero,object_off_tracked,47,OK,outputs_sweep50\object_off_tracked_zero_seed47\metrics.csv
+zero,passive_nopersist,47,OK,outputs_sweep50\passive_nopersist_zero_seed47\metrics.csv
+zero,passive_persist,47,OK,outputs_sweep50\passive_persist_zero_seed47\metrics.csv
+zero,active_persist,47,OK,outputs_sweep50\active_persist_zero_seed47\metrics.csv
+zero,active_random,47,OK,outputs_sweep50\active_random_zero_seed47\metrics.csv
+wrap,object_off_tracked,47,OK,outputs_sweep50\object_off_tracked_wrap_seed47\metrics.csv
+wrap,passive_nopersist,47,OK,outputs_sweep50\passive_nopersist_wrap_seed47\metrics.csv
+wrap,passive_persist,47,OK,outputs_sweep50\passive_persist_wrap_seed47\metrics.csv
+wrap,active_persist,47,OK,outputs_sweep50\active_persist_wrap_seed47\metrics.csv
+wrap,active_random,47,OK,outputs_sweep50\active_random_wrap_seed47\metrics.csv
+zero,object_off_tracked,48,OK,outputs_sweep50\object_off_tracked_zero_seed48\metrics.csv
+zero,passive_nopersist,48,OK,outputs_sweep50\passive_nopersist_zero_seed48\metrics.csv
+zero,passive_persist,48,OK,outputs_sweep50\passive_persist_zero_seed48\metrics.csv
+zero,active_persist,48,OK,outputs_sweep50\active_persist_zero_seed48\metrics.csv
+zero,active_random,48,OK,outputs_sweep50\active_random_zero_seed48\metrics.csv
+wrap,object_off_tracked,48,OK,outputs_sweep50\object_off_tracked_wrap_seed48\metrics.csv
+wrap,passive_nopersist,48,OK,outputs_sweep50\passive_nopersist_wrap_seed48\metrics.csv
+wrap,passive_persist,48,OK,outputs_sweep50\passive_persist_wrap_seed48\metrics.csv
+wrap,active_persist,48,OK,outputs_sweep50\active_persist_wrap_seed48\metrics.csv
+wrap,active_random,48,OK,outputs_sweep50\active_random_wrap_seed48\metrics.csv
+zero,object_off_tracked,49,OK,outputs_sweep50\object_off_tracked_zero_seed49\metrics.csv
+zero,passive_nopersist,49,OK,outputs_sweep50\passive_nopersist_zero_seed49\metrics.csv
+zero,passive_persist,49,OK,outputs_sweep50\passive_persist_zero_seed49\metrics.csv
+zero,active_persist,49,OK,outputs_sweep50\active_persist_zero_seed49\metrics.csv
+zero,active_random,49,OK,outputs_sweep50\active_random_zero_seed49\metrics.csv
+wrap,object_off_tracked,49,OK,outputs_sweep50\object_off_tracked_wrap_seed49\metrics.csv
+wrap,passive_nopersist,49,OK,outputs_sweep50\passive_nopersist_wrap_seed49\metrics.csv
+wrap,passive_persist,49,OK,outputs_sweep50\passive_persist_wrap_seed49\metrics.csv
+wrap,active_persist,49,OK,outputs_sweep50\active_persist_wrap_seed49\metrics.csv
+wrap,active_random,49,OK,outputs_sweep50\active_random_wrap_seed49\metrics.csv
+
+# Summary: 500 OK, 0 MISSING

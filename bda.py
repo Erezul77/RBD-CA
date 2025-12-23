@@ -15,6 +15,8 @@ try:
 except Exception:
     imageio = None
 
+from coherence_cost import CoherenceCostCalculator
+
 # Moore neighborhood (8-connected)
 N8 = [(-1, -1), (-1, 0), (-1, 1),
       (0, -1),           (0, 1),
@@ -569,6 +571,12 @@ def run(params: Params, out_dir: str, run_name: str = "run") -> None:
     seen = {}
     cycle_found = None
 
+    # TRA misfit calculator
+    coherence_calc = CoherenceCostCalculator(
+        window_size=(2 * params.subject_radius, 2 * params.subject_radius),
+        memory_depth=5
+    )
+
     for t in range(params.steps + 1):
         # save frames
         if t % params.frame_every == 0:
@@ -613,6 +621,18 @@ def run(params: Params, out_dir: str, run_name: str = "run") -> None:
         m["shock"] = 1 if (params.perturb_on and t == params.perturb_t) else 0
         m["tag"] = params.experiment_tag
 
+        # TRA misfit computation
+        S_coh, S_pred, S_total = coherence_calc.update(
+            current_core_mask=core,
+            predicted_core_mask=None,
+            observer_mode=params.observer_mode,
+            intervention_mask=None,
+        )
+        m["S_coh"] = float(S_coh)
+        m["S_pred"] = float(S_pred)
+        m["S_total"] = float(S_total)
+        m["seed"] = params.seed
+
         cj = m.get("core_jaccard_prev", float("nan"))
         if math.isnan(cj):
             identity_break = 1
@@ -641,10 +661,12 @@ def run(params: Params, out_dir: str, run_name: str = "run") -> None:
     # write metrics
     csv_path = os.path.join(out_dir, "metrics.csv")
     fieldnames = [
-        "t", "active", "boundary", "interior", "boundary_to_active", "dB_max", "dS_max",
+        "seed", "t", "active", "boundary", "interior", "boundary_to_active", "dB_max", "dS_max",
         "att_y", "att_x", "window_size", "window_active", "window_interior", "core_size",
         "persist_iou", "core_jaccard_prev", "core_centroid_drift", "identity_break", "identity_run_len",
-        "shock", "core_size_delta", "observer_action_cells", "observer_action_rate", "identity_score", "boundary_mode", "observer_mode", "tag"
+        "shock", "core_size_delta", "observer_action_cells", "observer_action_rate", "identity_score",
+        "S_coh", "S_pred", "S_total",
+        "boundary_mode", "observer_mode", "tag"
     ]
     with open(csv_path, "w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames)
